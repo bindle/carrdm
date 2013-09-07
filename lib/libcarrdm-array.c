@@ -69,6 +69,18 @@ struct carrdm_array_struct
 };
 
 
+//////////////////
+//              //
+//  Prototypes  //
+//              //
+//////////////////
+#ifdef CARRDM_PMARK
+#pragma mark - Prototypes
+#endif
+
+void carrdm_array_destroy(void * ptr);
+
+
 /////////////////
 //             //
 //  Variables  //
@@ -85,7 +97,7 @@ carrdm_definition carrdm_array_def =
    &carrdm_base_def,          // super_def;
    CARRDM_TYPE_ARRAY,         // type;
    sizeof(carrdm_array),      // size;
-   NULL,                      // destroy
+   carrdm_array_destroy,      // destroy
    NULL,                      // getter
    NULL                       // setter
 };
@@ -141,6 +153,21 @@ size_t carrdm_array_count(carrdm_array * array)
 {
    assert(carrdm_is_def(array, &carrdm_array_def) == CARRDM_TRUE);
    return(array->len);
+}
+
+
+void carrdm_array_destroy(void * ptr)
+{
+   carrdm_array * objref = ptr;
+   size_t         pos;
+   assert(objref != NULL);
+   if (carrdm_is_def(objref, &carrdm_array_def) == CARRDM_FALSE)
+      return;
+   for(pos = 0; pos < objref->len; pos++)
+      carrdm_release(objref->list[pos]);
+   if ((objref->list))
+      free(objref->list);
+   return;
 }
 
 
