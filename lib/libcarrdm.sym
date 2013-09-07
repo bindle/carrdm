@@ -44,6 +44,7 @@ carrdm_array_add
 carrdm_array_append
 carrdm_array_count
 carrdm_array_index
+carrdm_array_initialize
 carrdm_array_object
 carrdm_array_remove
 #
@@ -51,9 +52,10 @@ carrdm_array_remove
 carrdm_alloc
 carrdm_destroy
 carrdm_get_value
-carrdm_is_carrdm_object
 carrdm_is_def
+carrdm_is_object
 carrdm_is_type
+carrdm_is_valid_object
 carrdm_release
 carrdm_retain
 carrdm_retain_count

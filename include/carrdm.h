@@ -62,14 +62,15 @@
 #pragma mark - Definitions
 #endif
 
-#define CARRDM_MAGIC             0x43415252444d4d41LLU
+#define CARRDM_MAGIC             0x43415252444d4600LLU // CARRDMF
 
 #define carrdm_type(num)         (num &      0xffffffffffff0000LLU)
-#define CARRDM_TYPE_ARRAY        carrdm_type(0x4341525244410000LLU)
-#define CARRDM_TYPE_BASE         carrdm_type(0x4341525244420000LLU)
-#define CARRDM_TYPE_BASELOCK     carrdm_type(0x43415252444c0000LLU)
-#define CARRDM_TYPE_REALLOCK     carrdm_type(0x4341525244520000LLU)
-#define CARRDM_TYPE_RECLOCK      carrdm_type(0x43415252446c0000LLU)
+#define CARRDM_TYPE_ARRAY        carrdm_type(0x4341525244410000LLU) // CARRDA
+#define CARRDM_TYPE_BASE         carrdm_type(0x4341525244420000LLU) // CARRDB
+#define CARRDM_TYPE_BASELOCK     carrdm_type(0x43415252444c0000LLU) // CARRDL
+#define CARRDM_TYPE_DATA         carrdm_type(0x4341525244440000LLU) // CARRDD
+#define CARRDM_TYPE_REALLOCK     carrdm_type(0x4341525244520000LLU) // CARRDR
+#define CARRDM_TYPE_RECLOCK      carrdm_type(0x4341525244720000LLU) // CARRDr
 
 
 #define carrdm_ivar(type, ivar)  (carrdm_type(type) | (ivar & 0xffff))
@@ -144,6 +145,7 @@ CARRDM_BEGIN_C_DECLS
 typedef struct carrdm_array_struct           carrdm_array;
 typedef struct carrdm_base_struct            carrdm_base;
 typedef struct carrdm_baselock_struct        carrdm_baselock;
+typedef struct carrdm_data_struct            carrdm_data;
 typedef struct carrdm_definition_struct      carrdm_definition;
 typedef struct carrdm_reclock_struct         carrdm_reclock;
 
@@ -176,6 +178,17 @@ struct carrdm_baselock_struct
       carrdm_base  base;
    } supers;
    void * reallock;
+};
+
+
+struct carrdm_data_struct
+{
+   union
+   {
+      carrdm_base  base;
+   } supers;
+   size_t   size;
+   void   * data;
 };
 
 
@@ -231,9 +244,10 @@ _CARRDM_F void *     carrdm_base_initialize(void * ptr);
 _CARRDM_F void *     carrdm_alloc(void * objref, const carrdm_definition * def);
 _CARRDM_F void       carrdm_destroy(void * objref);
 _CARRDM_F int        carrdm_get_value(void * objref, uint64_t valid, void * outval);
-_CARRDM_F int        carrdm_is_carrdm_object(const void * objref);
 _CARRDM_F int        carrdm_is_def(const void * objref, const carrdm_definition * def);
+_CARRDM_F int        carrdm_is_object(const void * objref);
 _CARRDM_F int        carrdm_is_type(const void * objref, uint64_t type);
+_CARRDM_F int        carrdm_is_valid_object(const void * objref);
 _CARRDM_F void       carrdm_release(void * objref);
 _CARRDM_F void       carrdm_retain(void * objref);
 _CARRDM_F uint64_t   carrdm_retain_count(const void * objref);

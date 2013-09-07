@@ -190,25 +190,27 @@ carrdm_definition carrdm_reclock_def =
 void carrdm_baselock_destroy(void * ptr)
 {
    carrdm_baselock * objref = ptr;
-   assert(objref != NULL);
-   if (carrdm_is_def(objref, &carrdm_baselock_def) == CARRDM_FALSE)
-      return;
+
+   assert(carrdm_is_def(objref, &carrdm_baselock_def) == CARRDM_FALSE);
+
    if (objref->reallock != NULL)
       carrdm_release(objref->reallock);
+
    return;
 }
 
 
 void * carrdm_baselock_initialize(void * ptr)
 {
+   void            * mem;
    carrdm_baselock * objref;
 
-   if ((ptr = carrdm_alloc(ptr, &carrdm_baselock_def)) == NULL)
+   if ((mem = carrdm_alloc(ptr, &carrdm_baselock_def)) == NULL)
       return(NULL);
-
-   if ((objref = carrdm_base_initialize(ptr)) == NULL)
+   if ((objref = carrdm_base_initialize(mem)) == NULL)
    {
-      carrdm_destroy(ptr);
+      if (ptr == NULL)
+         carrdm_release(mem);
       return(NULL);
    };
 
@@ -262,24 +264,27 @@ int carrdm_lock(void * ptr)
 void carrdm_reallock_destroy(void * ptr)
 {
    carrdm_reallock * objref = ptr;
-   if (carrdm_is_def(objref, &carrdm_reallock_def) == CARRDM_FALSE)
-      return;
+
+   assert(carrdm_is_def(objref, &carrdm_reallock_def) == CARRDM_FALSE);
+
    carrdm_spin_destroy(&objref->lock_meta_lock);
    carrdm_mutex_destroy(&objref->lock_lock);
+
    return;
 }
 
 
 void * carrdm_reallock_initialize(void * ptr)
 {
+   void            * mem;
    carrdm_reallock * objref;
 
-   if ((ptr = carrdm_alloc(ptr, &carrdm_baselock_def)) == NULL)
+   if ((mem = carrdm_alloc(ptr, &carrdm_baselock_def)) == NULL)
       return(NULL);
-
-   if ((objref = carrdm_base_initialize(ptr)) == NULL)
+   if ((objref = carrdm_base_initialize(mem)) == NULL)
    {
-      carrdm_destroy(ptr);
+      if (ptr == NULL)
+         carrdm_release(mem);
       return(NULL);
    };
 

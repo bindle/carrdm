@@ -34,8 +34,8 @@
 /**
  *  @file
  */
-#ifndef _LIB_LIBCARRDM_ARRAY_H
-#define _LIB_LIBCARRDM_ARRAY_H 1
+#ifndef _LIB_LIBCARRDM_BASE_H
+#define _LIB_LIBCARRDM_BASE_H 1
 
 ///////////////
 //           //

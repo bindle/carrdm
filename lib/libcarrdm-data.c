@@ -34,8 +34,8 @@
 /**
  *  @file
  */
-#define _LIB_LIBCARRDM_ARRAY_C 1
-#include "libcarrdm-array.h"
+#define _LIB_LIBCARRDM_BASE_C 1
+#include "libcarrdm-base.h"
 
 ///////////////
 //           //
@@ -211,15 +211,13 @@ ssize_t carrdm_array_index(carrdm_array * array, void * ptr)
 
 void * carrdm_array_initialize(void * ptr)
 {
-   void        * mem;
    carrdm_base * objref;
 
-   if ((mem = carrdm_alloc(ptr, &carrdm_array_def)) == NULL)
+   if ((objref = carrdm_alloc(ptr, &carrdm_array_def)) == NULL)
       return(NULL);
-   if ((objref = carrdm_base_initialize(mem)) == NULL)
+   if ((ptr = carrdm_base_initialize(objref)) == NULL)
    {
-      if (ptr == NULL)
-         carrdm_release(mem);
+      carrdm_release(objref);
       return(NULL);
    };
 
