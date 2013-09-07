@@ -98,11 +98,11 @@ int carrdm_base_getter(const void * ptr, uint64_t valid, void * outval)
    const carrdm_base * objref = ptr;
    switch(valid)
    {
-      case CARRDM_SIZE:
+      case CARRDM_OBJECT_SIZE:
       *((size_t *)outval) = objref->def->size;
       break;
 
-      case CARRDM_TYPE:
+      case CARRDM_OBJECT_TYPE:
       *((uint64_t *)outval) = objref->def->type;
       break;
 

@@ -63,7 +63,7 @@ info_TEXINFOS				=
 noinst_DATA				=
 noinst_LTLIBRARIES			=
 noinst_HEADERS				=
-noinst_PROGRAMS				=
+noinst_PROGRAMS				= tests/test-array01
 noinst_SCRIPTS				=
 bin_PROGRAMS				=
 bin_SCRIPTS				=
@@ -72,7 +72,7 @@ sbin_SCRIPTS				=
 
 # lists
 BUILT_SOURCES				=
-TESTS					=
+TESTS					= tests/test-array01
 XFAIL_TESTS				=
 EXTRA_MANS				=
 EXTRA_DIST				= lib/libcarrdm.sym
@@ -95,7 +95,7 @@ lib_libcarrdm_la_DEPENDENCIES		= lib/libcarrdm.sym \
 					  $(pkginclude_HEADERS) \
 					  Makefile
 lib_libcarrdm_la_CPPFLAGS		= $(AM_CPPFLAGS) -I$(top_srcdir)/lib
-lib_libcarrdm_la_LIBADD		=
+lib_libcarrdm_la_LIBADD			=
 lib_libcarrdm_la_LDFLAGS		= -rpath'$(libdir)'\
 					  -version-info $(LIB_VERSION_INFO) \
 					  $(AM_LDFLAGS) \
@@ -110,8 +110,14 @@ lib_libcarrdm_la_SOURCES		= $(include_HEADERS) \
 					  lib/libcarrdm-base.h \
 					  lib/libcarrdm-core.c \
 					  lib/libcarrdm-core.h \
+					  lib/libcarrdm-data.c \
+					  lib/libcarrdm-data.h \
 					  lib/libcarrdm-lock.c \
 					  lib/libcarrdm-lock.h
+
+
+# macros for tests/test-array01
+tests_test_array01_LDADD		= lib/libcarrdm.la
 
 
 # Makefile includes

@@ -74,9 +74,11 @@
 
 
 #define carrdm_ivar(type, ivar)  (carrdm_type(type) | (ivar & 0xffff))
-#define CARRDM_DEF               carrdm_ivar(CARRDM_TYPE_BASE, 0x01)
-#define CARRDM_TYPE              carrdm_ivar(CARRDM_TYPE_BASE, 0x02)
-#define CARRDM_SIZE              carrdm_ivar(CARRDM_TYPE_BASE, 0x03)
+#define CARRDM_OBJECT_DEF        carrdm_ivar(CARRDM_TYPE_BASE, 0x01)
+#define CARRDM_OBJECT_TYPE       carrdm_ivar(CARRDM_TYPE_BASE, 0x02)
+#define CARRDM_OBJECT_SIZE       carrdm_ivar(CARRDM_TYPE_BASE, 0x03)
+#define CARRDM_DATA_SIZE         carrdm_ivar(CARRDM_TYPE_DATA, 0x01)
+#define CARRDM_DATA_BIN          carrdm_ivar(CARRDM_TYPE_DATA, 0x02)
 
 
 #define CARRDM_FALSE             0
@@ -89,6 +91,7 @@
 #define CARRDM_UNKNOWN_PARAM     3
 #define CARRDM_NO_MEMORY         4
 #define CARRDM_RANGE             5
+#define CARRDM_RONLY             6
 
 
 //////////////
@@ -211,10 +214,11 @@ struct carrdm_reclock_struct
 #pragma mark - Variables
 #endif
 
+_CARRDM_V carrdm_definition carrdm_array_def;
 _CARRDM_V carrdm_definition carrdm_base_def;
 _CARRDM_V carrdm_definition carrdm_baselock_def;
+_CARRDM_V carrdm_definition carrdm_data_def;
 _CARRDM_V carrdm_definition carrdm_reclock_def;
-_CARRDM_V carrdm_definition carrdm_array_def;
 
 
 //////////////////
@@ -252,6 +256,11 @@ _CARRDM_F void       carrdm_release(void * objref);
 _CARRDM_F void       carrdm_retain(void * objref);
 _CARRDM_F uint64_t   carrdm_retain_count(const void * objref);
 _CARRDM_F int        carrdm_set_value(void * objref, uint64_t valid, const void * inval);
+
+
+// data functions
+_CARRDM_F void *     carrdm_data_initialize(void * ptr);
+_CARRDM_F int        carrdm_data_resize(carrdm_data * objref, size_t size);
 
 
 // lock functions

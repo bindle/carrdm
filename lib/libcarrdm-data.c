@@ -34,8 +34,8 @@
 /**
  *  @file
  */
-#define _LIB_LIBCARRDM_BASE_C 1
-#include "libcarrdm-base.h"
+#define _LIB_LIBCARRDM_DATA_C 1
+#include "libcarrdm-data.h"
 
 ///////////////
 //           //
@@ -52,26 +52,6 @@
 
 //////////////////
 //              //
-//  Data Types  //
-//              //
-//////////////////
-#ifdef CARRDM_PMARK
-#pragma mark - Data Types
-#endif
-
-struct carrdm_array_struct
-{
-   union
-   {
-      carrdm_base  base;
-   } supers;
-   carrdm_base ** list;
-   size_t         len;
-};
-
-
-//////////////////
-//              //
 //  Prototypes  //
 //              //
 //////////////////
@@ -79,7 +59,9 @@ struct carrdm_array_struct
 #pragma mark - Prototypes
 #endif
 
-void carrdm_array_destroy(void * ptr);
+void carrdm_data_destroy(void * ptr);
+int  carrdm_data_getter(const void * ptr, uint64_t valid, void * outval);
+int  carrdm_data_setter(void * ptr, uint64_t valid, const void * inval);
 
 
 /////////////////
@@ -91,16 +73,16 @@ void carrdm_array_destroy(void * ptr);
 #pragma mark - Variables
 #endif
 
-carrdm_definition carrdm_array_def =
+carrdm_definition carrdm_data_def =
 {
 
    1,                         // initialized;
-   &carrdm_base_def,          // super_def;
-   CARRDM_TYPE_ARRAY,         // type;
-   sizeof(carrdm_array),      // size;
-   carrdm_array_destroy,      // destroy
-   NULL,                      // getter
-   NULL                       // setter
+   &carrdm_data_def,          // super_def;
+   CARRDM_TYPE_DATA,          // type;
+   sizeof(carrdm_data),       // size;
+   carrdm_data_destroy,       // destroy
+   carrdm_data_getter,        // getter
+   carrdm_data_setter         // setter
 };
 
 
@@ -113,115 +95,92 @@ carrdm_definition carrdm_array_def =
 #pragma mark - Functions
 #endif
 
-int carrdm_array_add(carrdm_array * array, void * ptr, size_t idx)
+void carrdm_data_destroy(void * ptr)
 {
-   carrdm_base  * base = ptr;
-   size_t         size;
-   carrdm_base ** list;
-   size_t         pos;
+   carrdm_data * objref = ptr;
 
-   assert(carrdm_is_def(array, &carrdm_array_def) == CARRDM_TRUE);
-   assert(carrdm_is_valid_object(base)            == CARRDM_TRUE);
-   assert(array->len >= idx);
+   assert(carrdm_is_def(objref, &carrdm_data_def) == CARRDM_TRUE);
 
-   // allocates memory
-   size = sizeof(carrdm_base *) * (array->len + 1);
-   if ((list = realloc(array->list, size)) == NULL)
-      return(CARRDM_NO_MEMORY);
-   array->list = list;
-
-   for(pos = array->len; pos > idx; pos--)
-      array->list[pos] = array->list[pos-1];
-
-   // add obj to array
-   carrdm_retain(base);
-   array->list[idx] = base;
-   array->len++;
-
-   return(CARRDM_SUCCESS);
-}
-
-
-int carrdm_array_append(carrdm_array * array, void * ptr)
-{
-   assert(carrdm_is_def(array, &carrdm_array_def) == CARRDM_TRUE);
-   assert(carrdm_is_valid_object(ptr)             == CARRDM_TRUE);
-   return(carrdm_array_add(array, ptr, array->len));
-}
-
-
-size_t carrdm_array_count(carrdm_array * array)
-{
-   assert(carrdm_is_def(array, &carrdm_array_def) == CARRDM_TRUE);
-   return(array->len);
-}
-
-
-void carrdm_array_destroy(void * ptr)
-{
-   carrdm_array * objref = ptr;
-   size_t         pos;
-
-   assert(carrdm_is_def(objref, &carrdm_array_def) == CARRDM_TRUE);
-
-   for(pos = 0; pos < objref->len; pos++)
-      carrdm_release(objref->list[pos]);
-   if ((objref->list))
-      free(objref->list);
+   if (objref->data != NULL)
+      free(objref->data);
+   objref->data = NULL;
+   objref->size = 0;
 
    return;
 }
 
 
-void * carrdm_array_object(carrdm_array * array, size_t idx)
+int carrdm_data_getter(const void * ptr, uint64_t valid, void * outval)
 {
-   assert(carrdm_is_def(array, &carrdm_array_def) == CARRDM_TRUE);
-   if (idx >= array->len)
-      return(NULL);
-   return(array->list[idx]);
-}
+   const carrdm_data * objref = ptr;
+   switch(valid)
+   {
+      case CARRDM_DATA_BIN:
+      *((void **)outval) = objref->data;
+      break;
 
+      case CARRDM_DATA_SIZE:
+      *((size_t *)outval) = objref->size;
+      break;
 
-int carrdm_array_remove(carrdm_array * array, size_t idx)
-{
-   size_t pos;
-   assert(carrdm_is_def(array, &carrdm_array_def) == CARRDM_TRUE);
-   if (idx >= array->len)
-      return(CARRDM_RANGE);
-   carrdm_release(array->list[idx]);
-   array->len--;
-   for(pos = idx; pos < array->len; pos++)
-      array->list[pos] = array->list[pos+1];
-   if ((array->list))
-      array->list[array->len] = NULL;
+      default:
+      return(CARRDM_UNKNOWN_PARAM);
+   };
    return(CARRDM_SUCCESS);
 }
 
 
-ssize_t carrdm_array_index(carrdm_array * array, void * ptr)
+void * carrdm_data_initialize(void * ptr)
 {
-   size_t pos;
-   assert(carrdm_is_def(array, &carrdm_array_def) == CARRDM_TRUE);
-   for(pos = 0; pos < array->len; pos++)
-      if (array->list[pos] == ptr)
-         return((ssize_t)pos);
-   return(-1);
-}
-
-
-void * carrdm_array_initialize(void * ptr)
-{
+   void        * mem;
    carrdm_base * objref;
 
-   if ((objref = carrdm_alloc(ptr, &carrdm_array_def)) == NULL)
+   if ((mem = carrdm_alloc(ptr, &carrdm_data_def)) == NULL)
       return(NULL);
-   if ((ptr = carrdm_base_initialize(objref)) == NULL)
+   if ((objref = carrdm_base_initialize(mem)) == NULL)
    {
-      carrdm_release(objref);
+      if (ptr == NULL)
+         carrdm_release(mem);
       return(NULL);
    };
 
-   return(objref);
+   return(carrdm_base_initialize(ptr));
+}
+
+
+int carrdm_data_resize(carrdm_data * objref, size_t size)
+{
+   void * ptr;
+
+   assert(carrdm_is_def(objref, &carrdm_data_def) == CARRDM_TRUE);
+
+   if (size < objref->size)
+      return(CARRDM_SUCCESS);
+
+   if ((ptr = realloc(objref->data, size)) == NULL)
+      return(CARRDM_NO_MEMORY);
+   objref->data = ptr;
+   objref->size = size;
+
+   return(CARRDM_SUCCESS);
+}
+
+
+int carrdm_data_setter(void * ptr, uint64_t valid, const void * inval)
+{
+   carrdm_data * objref = ptr;
+   switch(valid)
+   {
+      case CARRDM_DATA_BIN:
+      return(CARRDM_RONLY);
+
+      case CARRDM_DATA_SIZE:
+      return(carrdm_data_resize(objref, *((size_t *)inval)));
+
+      default:
+      return(CARRDM_UNKNOWN_PARAM);
+   };
+   return(CARRDM_SUCCESS);
 }
 
 /* end of source */
