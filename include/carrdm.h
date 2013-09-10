@@ -214,7 +214,6 @@ struct carrdm_reclock_struct
 #pragma mark - Variables
 #endif
 
-_CARRDM_V carrdm_definition carrdm_array_def;
 _CARRDM_V carrdm_definition carrdm_base_def;
 _CARRDM_V carrdm_definition carrdm_baselock_def;
 _CARRDM_V carrdm_definition carrdm_data_def;

@@ -34,14 +34,15 @@
 #   lib/libcarrdm.sym exported symbols
 #
 # Variables
-carrdm_array_def
 carrdm_base_def
 carrdm_baselock_def
+carrdm_data_def
 carrdm_reclock_def
 #
 # Array Functions
 carrdm_array_add
 carrdm_array_append
+carrdm_array_cast
 carrdm_array_count
 carrdm_array_index
 carrdm_array_initialize
