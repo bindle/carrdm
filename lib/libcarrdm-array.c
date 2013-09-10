@@ -156,6 +156,13 @@ int carrdm_array_append(carrdm_array * array, void * ptr)
 }
 
 
+carrdm_array * carrdm_array_cast(carrdm_base * objref)
+{
+   assert(carrdm_is_def(objref, &carrdm_array_def) == CARRDM_TRUE);
+   return((carrdm_array *) objref);
+}
+
+
 size_t carrdm_array_count(carrdm_array * array)
 {
    assert(carrdm_is_def(array, &carrdm_array_def) == CARRDM_TRUE);

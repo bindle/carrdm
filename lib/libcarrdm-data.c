@@ -96,6 +96,13 @@ carrdm_definition carrdm_data_def =
 #pragma mark - Functions
 #endif
 
+carrdm_data * carrdm_data_cast(carrdm_base * objref)
+{
+   assert(carrdm_is_def(objref, &carrdm_data_def) == CARRDM_TRUE);
+   return((carrdm_data *) objref);
+}
+
+
 void carrdm_data_destroy(void * ptr)
 {
    carrdm_data * objref = ptr;
