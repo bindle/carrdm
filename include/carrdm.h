@@ -259,7 +259,10 @@ _CARRDM_F int        carrdm_set_value(void * objref, uint64_t valid, const void 
 
 
 // data functions
-_CARRDM_F void *     carrdm_data_initialize(void * ptr);
+_CARRDM_F void *     carrdm_data_initialize(void * mem);
+_CARRDM_F void *     carrdm_data_initialize_with_data(void * mem, const void * data);
+_CARRDM_F void *     carrdm_data_initialize_with_memory(void * mem, const void * src, size_t size);
+_CARRDM_F void *     carrdm_data_initialize_with_size(void * mem, size_t size);
 _CARRDM_F int        carrdm_data_resize(carrdm_data * objref, size_t size);
 
 

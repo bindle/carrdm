@@ -61,10 +61,17 @@ carrdm_retain
 carrdm_retain_count
 carrdm_set_value
 #
+# Data Functions
+carrdm_data_resize
+#
 # Initializers
 carrdm_array_initialize
 carrdm_base_initialize
 carrdm_baselock_initialize
+carrdm_data_initialize
+carrdm_data_initialize_with_data
+carrdm_data_initialize_with_memory
+carrdm_data_initialize_with_size
 carrdm_reclock_initialize
 #
 # Lock Functions

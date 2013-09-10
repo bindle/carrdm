@@ -48,6 +48,7 @@
 
 #include <assert.h>
 #include <stdio.h>
+#include <string.h>
 
 
 //////////////////
@@ -132,19 +133,55 @@ int carrdm_data_getter(const void * ptr, uint64_t valid, void * outval)
 
 void * carrdm_data_initialize(void * ptr)
 {
+   return(carrdm_data_initialize_with_memory(ptr, NULL, 0));
+}
+
+
+void * carrdm_data_initialize_with_data(void * mem, const void * ptr)
+{
+   const carrdm_data * data = ptr;
+   assert(carrdm_is_def(data, &carrdm_data_def) == CARRDM_TRUE);
+   return(carrdm_data_initialize_with_memory(mem, data->data, data->size));
+}
+
+
+void * carrdm_data_initialize_with_memory(void * ptr, const void * src, size_t size)
+{
    void        * mem;
-   carrdm_base * objref;
+   carrdm_data * data;
+
+   assert( ((src != NULL) && (size > 0)) || (src == NULL) );
 
    if ((mem = carrdm_alloc(ptr, &carrdm_data_def)) == NULL)
       return(NULL);
-   if ((objref = carrdm_base_initialize(mem)) == NULL)
+   if ((data = carrdm_base_initialize(mem)) == NULL)
    {
       if (ptr == NULL)
          carrdm_release(mem);
       return(NULL);
    };
 
-   return(carrdm_base_initialize(ptr));
+   if (size > 0)
+   {
+      if ((data->data = malloc(size)) == NULL)
+      {
+         carrdm_release(data);
+         return(NULL);
+      };
+      data->size = size;
+      if (src != NULL)
+         memcpy(data->data, src, size);
+      else
+         memset(data->data, 0, size);
+   };
+
+   return(data);
+}
+
+
+void * carrdm_data_initialize_with_size(void * ptr, size_t size)
+{
+   return(carrdm_data_initialize_with_memory(ptr, NULL, size));
 }
 
 
