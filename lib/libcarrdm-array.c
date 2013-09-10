@@ -221,18 +221,17 @@ carrdm_array * carrdm_array_initialize(void * ptr)
 }
 
 
-carrdm_array * carrdm_array_initialize_with_array(void * mem, void * src)
+carrdm_array * carrdm_array_initialize_with_array(void * mem, carrdm_array * src)
 {
-   carrdm_array * array = src;
    carrdm_array * objref;
    size_t         pos;
-   assert(carrdm_is_def(array, &carrdm_array_def) == CARRDM_TRUE);
-   if ((objref = carrdm_array_initialize_with_capacity(mem, array->len)) == NULL)
+   assert(carrdm_is_def(src, &carrdm_array_def) == CARRDM_TRUE);
+   if ((objref = carrdm_array_initialize_with_capacity(mem, src->len)) == NULL)
       return(NULL);
-   for(pos = 0; pos < array->len; pos++)
+   for(pos = 0; pos < src->len; pos++)
    {
-      carrdm_retain(array->list[pos]);
-      objref->list[pos] = array->list[pos];
+      carrdm_retain(src->list[pos]);
+      objref->list[pos] = src->list[pos];
    };
    return(objref);
 }
