@@ -247,8 +247,8 @@ _CARRDM_F carrdm_base  * carrdm_base_initialize(void * mem);
 
 
 // core functions
-_CARRDM_F void *         carrdm_alloc(void * objref, const carrdm_definition * def);
-_CARRDM_F void           carrdm_destroy(void * objref);
+_CARRDM_F void *         carrdm_alloc(void * mem, const carrdm_definition * def);
+_CARRDM_F void           carrdm_destroy(void * mem);
 _CARRDM_F int            carrdm_get_value(void * objref, uint64_t valid, void * outval);
 _CARRDM_F int            carrdm_is_def(const void * objref, const carrdm_definition * def);
 _CARRDM_F int            carrdm_is_object(const void * objref);

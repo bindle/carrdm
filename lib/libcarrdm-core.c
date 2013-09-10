@@ -62,14 +62,14 @@
 
 CARRDM_BEGIN_C_DECLS
 
-void * carrdm_alloc(void * ptr, const carrdm_definition * def)
+void * carrdm_alloc(void * mem, const carrdm_definition * def)
 {
    carrdm_base * objref;
 
    assert(def       != NULL);
    assert(def->size >= sizeof(carrdm_base));
 
-   if ((objref = ptr) == NULL)
+   if ((objref = mem) == NULL)
    {
       if ((objref = malloc(def->size)) == NULL)
          return(NULL);
@@ -85,16 +85,16 @@ void * carrdm_alloc(void * ptr, const carrdm_definition * def)
 }
 
 
-void carrdm_destroy(void * ptr)
+void carrdm_destroy(void * mem)
 {
-   carrdm_base             * objref = ptr;
+   carrdm_base             * objref = mem;
    const carrdm_definition * def;
 
-   assert(carrdm_is_object(ptr) == CARRDM_TRUE);
+   assert(carrdm_is_object(mem) == CARRDM_TRUE);
    assert(objref->def          != NULL);
    assert(objref->retain_count <= 1);
 
-   if (carrdm_is_object(ptr) == CARRDM_FALSE)
+   if (carrdm_is_object(mem) == CARRDM_FALSE)
       abort();
 
    def = objref->def;
