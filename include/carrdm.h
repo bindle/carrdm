@@ -231,49 +231,49 @@ _CARRDM_V carrdm_definition carrdm_reclock_def;
 #endif
 
 // array functions
-_CARRDM_F int        carrdm_array_add(carrdm_array * array, void * ptr, size_t idx);
-_CARRDM_F int        carrdm_array_append(carrdm_array * array, void * ptr);
-_CARRDM_F size_t     carrdm_array_count(carrdm_array * array);
-_CARRDM_F ssize_t    carrdm_array_index(carrdm_array * array, void * ptr);
+_CARRDM_F int            carrdm_array_add(carrdm_array * array, void * ptr, size_t idx);
+_CARRDM_F int            carrdm_array_append(carrdm_array * array, void * ptr);
+_CARRDM_F size_t         carrdm_array_count(carrdm_array * array);
+_CARRDM_F ssize_t        carrdm_array_index(carrdm_array * array, void * ptr);
 _CARRDM_F carrdm_array * carrdm_array_initialize(void * mem);
 _CARRDM_F carrdm_array * carrdm_array_initialize_with_array(void * mem, void * src);
 _CARRDM_F carrdm_array * carrdm_array_initialize_with_capacity(void * mem, size_t len);
 _CARRDM_F carrdm_base  * carrdm_array_object(carrdm_array * array, size_t idx);
-_CARRDM_F int        carrdm_array_remove(carrdm_array * array, size_t idx);
+_CARRDM_F int            carrdm_array_remove(carrdm_array * array, size_t idx);
 
 
 // base functions
-_CARRDM_F carrdm_base * carrdm_base_initialize(void * mem);
+_CARRDM_F carrdm_base  * carrdm_base_initialize(void * mem);
 
 
 // core functions
-_CARRDM_F void *     carrdm_alloc(void * objref, const carrdm_definition * def);
-_CARRDM_F void       carrdm_destroy(void * objref);
-_CARRDM_F int        carrdm_get_value(void * objref, uint64_t valid, void * outval);
-_CARRDM_F int        carrdm_is_def(const void * objref, const carrdm_definition * def);
-_CARRDM_F int        carrdm_is_object(const void * objref);
-_CARRDM_F int        carrdm_is_type(const void * objref, uint64_t type);
-_CARRDM_F int        carrdm_is_valid_object(const void * objref);
-_CARRDM_F void       carrdm_release(void * objref);
-_CARRDM_F void       carrdm_retain(void * objref);
-_CARRDM_F uint64_t   carrdm_retain_count(const void * objref);
-_CARRDM_F int        carrdm_set_value(void * objref, uint64_t valid, const void * inval);
+_CARRDM_F void *         carrdm_alloc(void * objref, const carrdm_definition * def);
+_CARRDM_F void           carrdm_destroy(void * objref);
+_CARRDM_F int            carrdm_get_value(void * objref, uint64_t valid, void * outval);
+_CARRDM_F int            carrdm_is_def(const void * objref, const carrdm_definition * def);
+_CARRDM_F int            carrdm_is_object(const void * objref);
+_CARRDM_F int            carrdm_is_type(const void * objref, uint64_t type);
+_CARRDM_F int            carrdm_is_valid_object(const void * objref);
+_CARRDM_F void           carrdm_release(void * objref);
+_CARRDM_F void           carrdm_retain(void * objref);
+_CARRDM_F uint64_t       carrdm_retain_count(const void * objref);
+_CARRDM_F int            carrdm_set_value(void * objref, uint64_t valid, const void * inval);
 
 
 // data functions
-_CARRDM_F carrdm_data * carrdm_data_initialize(void * mem);
-_CARRDM_F carrdm_data * carrdm_data_initialize_with_data(void * mem, const void * data);
-_CARRDM_F carrdm_data * carrdm_data_initialize_with_memory(void * mem, const void * src, size_t size);
-_CARRDM_F carrdm_data * carrdm_data_initialize_with_size(void * mem, size_t size);
-_CARRDM_F int        carrdm_data_resize(carrdm_data * objref, size_t size);
+_CARRDM_F carrdm_data  * carrdm_data_initialize(void * mem);
+_CARRDM_F carrdm_data  * carrdm_data_initialize_with_data(void * mem, const void * data);
+_CARRDM_F carrdm_data  * carrdm_data_initialize_with_memory(void * mem, const void * src, size_t size);
+_CARRDM_F carrdm_data  * carrdm_data_initialize_with_size(void * mem, size_t size);
+_CARRDM_F int            carrdm_data_resize(carrdm_data * objref, size_t size);
 
 
 // lock functions
 _CARRDM_F carrdm_baselock * carrdm_baselock_initialize(void * mem);
+_CARRDM_F int               carrdm_lock(void * objref);
 _CARRDM_F carrdm_reclock  * carrdm_reclock_initialize(void * mem);
-_CARRDM_F int        carrdm_lock(void * objref);
-_CARRDM_F int        carrdm_trylock(void * objref);
-_CARRDM_F int        carrdm_unlock(void * objref);
+_CARRDM_F int               carrdm_trylock(void * objref);
+_CARRDM_F int               carrdm_unlock(void * objref);
 
 
 CARRDM_END_C_DECLS
