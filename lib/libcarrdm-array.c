@@ -179,7 +179,7 @@ void carrdm_array_destroy(void * ptr)
 }
 
 
-void * carrdm_array_object(carrdm_array * array, size_t idx)
+carrdm_base * carrdm_array_object(carrdm_array * array, size_t idx)
 {
    assert(carrdm_is_def(array, &carrdm_array_def) == CARRDM_TRUE);
    if (idx >= array->len)
@@ -215,13 +215,13 @@ ssize_t carrdm_array_index(carrdm_array * array, void * ptr)
 }
 
 
-void * carrdm_array_initialize(void * ptr)
+carrdm_array * carrdm_array_initialize(void * ptr)
 {
    return(carrdm_array_initialize_with_capacity(ptr, 0));
 }
 
 
-void * carrdm_array_initialize_with_array(void * mem, void * src)
+carrdm_array * carrdm_array_initialize_with_array(void * mem, void * src)
 {
    carrdm_array * array = src;
    carrdm_array * objref;
@@ -238,7 +238,7 @@ void * carrdm_array_initialize_with_array(void * mem, void * src)
 }
 
 
-void * carrdm_array_initialize_with_capacity(void * ptr, size_t len)
+carrdm_array * carrdm_array_initialize_with_capacity(void * ptr, size_t len)
 {
    void         * mem;
    carrdm_array * array;
@@ -246,7 +246,7 @@ void * carrdm_array_initialize_with_capacity(void * ptr, size_t len)
 
    if ((mem = carrdm_alloc(ptr, &carrdm_array_def)) == NULL)
       return(NULL);
-   if ((array = carrdm_base_initialize(mem)) == NULL)
+   if ((array = (carrdm_array *)carrdm_base_initialize(mem)) == NULL)
    {
       if (ptr == NULL)
          carrdm_release(mem);

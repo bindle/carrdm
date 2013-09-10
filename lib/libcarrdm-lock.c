@@ -120,8 +120,8 @@ void   carrdm_mutex_lock(carrdm_mutex_t * mutex);
 int    carrdm_mutex_trylock(carrdm_mutex_t * mutex);
 void   carrdm_mutex_unlock(carrdm_mutex_t * mutex);
 
-void   carrdm_reallock_destroy(void * objref);
-void * carrdm_reallock_initialize(void * ptr);
+void              carrdm_reallock_destroy(void * objref);
+carrdm_reallock * carrdm_reallock_initialize(void * ptr);
 
 void   carrdm_spin_destroy(carrdm_spinlock_t * spinlock);
 int    carrdm_spin_init(carrdm_spinlock_t * spinlock);
@@ -200,14 +200,14 @@ void carrdm_baselock_destroy(void * ptr)
 }
 
 
-void * carrdm_baselock_initialize(void * ptr)
+carrdm_baselock * carrdm_baselock_initialize(void * ptr)
 {
    void            * mem;
    carrdm_baselock * objref;
 
    if ((mem = carrdm_alloc(ptr, &carrdm_baselock_def)) == NULL)
       return(NULL);
-   if ((objref = carrdm_base_initialize(mem)) == NULL)
+   if ((objref = (carrdm_baselock *)carrdm_base_initialize(mem)) == NULL)
    {
       if (ptr == NULL)
          carrdm_release(mem);
@@ -274,14 +274,14 @@ void carrdm_reallock_destroy(void * ptr)
 }
 
 
-void * carrdm_reallock_initialize(void * ptr)
+carrdm_reallock * carrdm_reallock_initialize(void * ptr)
 {
    void            * mem;
    carrdm_reallock * objref;
 
    if ((mem = carrdm_alloc(ptr, &carrdm_baselock_def)) == NULL)
       return(NULL);
-   if ((objref = carrdm_base_initialize(mem)) == NULL)
+   if ((objref = (carrdm_reallock *)carrdm_base_initialize(mem)) == NULL)
    {
       if (ptr == NULL)
          carrdm_release(mem);
@@ -295,20 +295,22 @@ void * carrdm_reallock_initialize(void * ptr)
 }
 
 
-void * carrdm_reclock_initialize(void * ptr)
+carrdm_reclock * carrdm_reclock_initialize(void * ptr)
 {
-   carrdm_baselock * objref;
+   carrdm_reclock  * objref;
+   carrdm_reallock * reallock;
 
    if ((ptr = carrdm_alloc(ptr, &carrdm_baselock_def)) == NULL)
       return(NULL);
 
-   if ((objref = carrdm_base_initialize(ptr)) == NULL)
+   if ((objref = (carrdm_reclock *)carrdm_base_initialize(ptr)) == NULL)
    {
       carrdm_destroy(ptr);
       return(NULL);
    };
 
-   ((carrdm_reallock *)objref->reallock)->lock_recursive = CARRDM_TRUE;
+   reallock                 = objref->supers.baselock.reallock;
+   reallock->lock_recursive = CARRDM_TRUE;
 
    return(objref);
 }

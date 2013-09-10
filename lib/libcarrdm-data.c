@@ -131,13 +131,13 @@ int carrdm_data_getter(const void * ptr, uint64_t valid, void * outval)
 }
 
 
-void * carrdm_data_initialize(void * ptr)
+carrdm_data * carrdm_data_initialize(void * ptr)
 {
    return(carrdm_data_initialize_with_memory(ptr, NULL, 0));
 }
 
 
-void * carrdm_data_initialize_with_data(void * mem, const void * ptr)
+carrdm_data * carrdm_data_initialize_with_data(void * mem, const void * ptr)
 {
    const carrdm_data * data = ptr;
    assert(carrdm_is_def(data, &carrdm_data_def) == CARRDM_TRUE);
@@ -145,7 +145,7 @@ void * carrdm_data_initialize_with_data(void * mem, const void * ptr)
 }
 
 
-void * carrdm_data_initialize_with_memory(void * ptr, const void * src, size_t size)
+carrdm_data * carrdm_data_initialize_with_memory(void * ptr, const void * src, size_t size)
 {
    void        * mem;
    carrdm_data * data;
@@ -154,7 +154,7 @@ void * carrdm_data_initialize_with_memory(void * ptr, const void * src, size_t s
 
    if ((mem = carrdm_alloc(ptr, &carrdm_data_def)) == NULL)
       return(NULL);
-   if ((data = carrdm_base_initialize(mem)) == NULL)
+   if ((data = (carrdm_data *)carrdm_base_initialize(mem)) == NULL)
    {
       if (ptr == NULL)
          carrdm_release(mem);
@@ -179,7 +179,7 @@ void * carrdm_data_initialize_with_memory(void * ptr, const void * src, size_t s
 }
 
 
-void * carrdm_data_initialize_with_size(void * ptr, size_t size)
+carrdm_data * carrdm_data_initialize_with_size(void * ptr, size_t size)
 {
    return(carrdm_data_initialize_with_memory(ptr, NULL, size));
 }

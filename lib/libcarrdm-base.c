@@ -113,7 +113,7 @@ int carrdm_base_getter(const void * ptr, uint64_t valid, void * outval)
 }
 
 
-void * carrdm_base_initialize(void * ptr)
+carrdm_base * carrdm_base_initialize(void * ptr)
 {
    carrdm_base * objref;
    if ((objref = carrdm_alloc(ptr, &carrdm_base_def)) == NULL)
