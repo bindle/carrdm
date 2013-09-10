@@ -66,6 +66,8 @@ carrdm_data_resize
 #
 # Initializers
 carrdm_array_initialize
+carrdm_array_initialize_with_array
+carrdm_array_initialize_with_capacity
 carrdm_base_initialize
 carrdm_baselock_initialize
 carrdm_data_initialize

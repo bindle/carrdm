@@ -235,7 +235,9 @@ _CARRDM_F int        carrdm_array_add(carrdm_array * array, void * ptr, size_t i
 _CARRDM_F int        carrdm_array_append(carrdm_array * array, void * ptr);
 _CARRDM_F size_t     carrdm_array_count(carrdm_array * array);
 _CARRDM_F ssize_t    carrdm_array_index(carrdm_array * array, void * ptr);
-_CARRDM_F void *     carrdm_array_initialize(void * ptr);
+_CARRDM_F void *     carrdm_array_initialize(void * mem);
+_CARRDM_F void *     carrdm_array_initialize_with_array(void * mem, void * src);
+_CARRDM_F void *     carrdm_array_initialize_with_capacity(void * mem, size_t len);
 _CARRDM_F void *     carrdm_array_object(carrdm_array * array, size_t idx);
 _CARRDM_F int        carrdm_array_remove(carrdm_array * array, size_t idx);
 

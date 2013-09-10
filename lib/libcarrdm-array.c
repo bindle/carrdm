@@ -48,6 +48,7 @@
 
 #include <assert.h>
 #include <stdio.h>
+#include <string.h>
 
 
 //////////////////
@@ -67,6 +68,7 @@ struct carrdm_array_struct
    } supers;
    carrdm_base ** list;
    size_t         len;
+   size_t         capacity;
 };
 
 
@@ -125,10 +127,14 @@ int carrdm_array_add(carrdm_array * array, void * ptr, size_t idx)
    assert(array->len >= idx);
 
    // allocates memory
-   size = sizeof(carrdm_base *) * (array->len + 1);
-   if ((list = realloc(array->list, size)) == NULL)
-      return(CARRDM_NO_MEMORY);
-   array->list = list;
+   if ((array->len+1) < array->capacity)
+   {
+      size = sizeof(carrdm_base *) * (array->capacity + 1);
+      if ((list = realloc(array->list, size)) == NULL)
+         return(CARRDM_NO_MEMORY);
+      array->list = list;
+      array->capacity++;
+   };
 
    for(pos = array->len; pos > idx; pos--)
       array->list[pos] = array->list[pos-1];
@@ -211,19 +217,55 @@ ssize_t carrdm_array_index(carrdm_array * array, void * ptr)
 
 void * carrdm_array_initialize(void * ptr)
 {
-   void        * mem;
-   carrdm_base * objref;
+   return(carrdm_array_initialize_with_capacity(ptr, 0));
+}
+
+
+void * carrdm_array_initialize_with_array(void * mem, void * src)
+{
+   carrdm_array * array = src;
+   carrdm_array * objref;
+   size_t         pos;
+   assert(carrdm_is_def(array, &carrdm_array_def) == CARRDM_TRUE);
+   if ((objref = carrdm_array_initialize_with_capacity(mem, array->len)) == NULL)
+      return(NULL);
+   for(pos = 0; pos < array->len; pos++)
+   {
+      carrdm_retain(array->list[pos]);
+      objref->list[pos] = array->list[pos];
+   };
+   return(objref);
+}
+
+
+void * carrdm_array_initialize_with_capacity(void * ptr, size_t len)
+{
+   void         * mem;
+   carrdm_array * array;
+   size_t         size;
 
    if ((mem = carrdm_alloc(ptr, &carrdm_array_def)) == NULL)
       return(NULL);
-   if ((objref = carrdm_base_initialize(mem)) == NULL)
+   if ((array = carrdm_base_initialize(mem)) == NULL)
    {
       if (ptr == NULL)
          carrdm_release(mem);
       return(NULL);
    };
 
-   return(objref);
+   if (len > 0)
+   {
+      size = sizeof(carrdm_array *) * len;
+      if ((array->list = malloc(size)) == NULL)
+      {
+         carrdm_release(array);
+         return(NULL);
+      };
+      memset(array->list, 0, size);
+      array->capacity = len;
+   };
+
+   return(array);
 }
 
 /* end of source */
