@@ -241,7 +241,7 @@ _CARRDM_F int        carrdm_array_remove(carrdm_array * array, size_t idx);
 
 
 // base functions
-_CARRDM_F void *     carrdm_base_initialize(void * ptr);
+_CARRDM_F void *     carrdm_base_initialize(void * mem);
 
 
 // core functions
@@ -267,8 +267,8 @@ _CARRDM_F int        carrdm_data_resize(carrdm_data * objref, size_t size);
 
 
 // lock functions
-_CARRDM_F void *     carrdm_baselock_initialize(void * ptr);
-_CARRDM_F void *     carrdm_reclock_initialize(void * ptr);
+_CARRDM_F void *     carrdm_baselock_initialize(void * mem);
+_CARRDM_F void *     carrdm_reclock_initialize(void * mem);
 _CARRDM_F int        carrdm_lock(void * objref);
 _CARRDM_F int        carrdm_trylock(void * objref);
 _CARRDM_F int        carrdm_unlock(void * objref);
