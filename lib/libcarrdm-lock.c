@@ -110,7 +110,6 @@ struct carrdm_reallock_struct
 #ifdef CARRDM_PMARK
 #pragma mark - Prototypes
 #endif
-CARRDM_BEGIN_C_DECLS
 
 void carrdm_baselock_destroy(void * objref);
 

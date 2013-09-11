@@ -80,8 +80,6 @@
 #ifdef CARRDM_PMARK
 #pragma mark - Prototypes
 #endif
-CARRDM_BEGIN_C_DECLS
 
 
-CARRDM_END_C_DECLS
 #endif /* end of header */

@@ -60,8 +60,6 @@
 #pragma mark - Functions
 #endif
 
-CARRDM_BEGIN_C_DECLS
-
 void * carrdm_alloc(void * mem, const carrdm_definition * def)
 {
    carrdm_base * objref;

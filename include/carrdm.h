@@ -103,33 +103,31 @@
 #pragma mark - Macros
 #endif
 
-#undef CARRDM_BEGIN_C_DECLS
-#undef CARRDM_END_C_DECLS
+
+#undef CARRDM_C_DECLS
 #if defined(__cplusplus) || defined(c_plusplus)
-#   define CARRDM_BEGIN_C_DECLS  extern "C" {    ///< exports as C functions
-#   define CARRDM_END_C_DECLS    }               ///< exports as C functions
+#   define CARRDM_C_DECLS  "C"          ///< exports as C functions
 #else
-#   define CARRDM_BEGIN_C_DECLS  /* empty */     ///< exports as C functions
-#   define CARRDM_END_C_DECLS    /* empty */     ///< exports as C functions
+#   define CARRDM_C_DECLS  /* empty */  ///< exports as C functions
 #endif
 
 
 // Exports function type
 #ifdef WIN32
-#   ifdef _CARRDM_LIBS_DYNAMIC
-#      define _CARRDM_F   extern __declspec(dllexport)   ///< used for library calls
-#      define _CARRDM_V   extern __declspec(dllexport)   ///< used for library calls
+#   ifdef _LIB_LIBCARRDM_H
+#      define _CARRDM_F   extern CARRDM_C_DECLS __declspec(dllexport)   ///< used for library calls
+#      define _CARRDM_V   extern CARRDM_C_DECLS __declspec(dllexport)   ///< used for library calls
 #   else
-#      define _CARRDM_F   extern __declspec(dllimport)   ///< used for library calls
-#      define _CARRDM_V   extern __declspec(dllimport)   ///< used for library calls
+#      define _CARRDM_F   extern CARRDM_C_DECLS __declspec(dllimport)   ///< used for library calls
+#      define _CARRDM_V   extern CARRDM_C_DECLS __declspec(dllimport)   ///< used for library calls
 #   endif
 #else
-#   ifdef _CARRDM_LIBS_DYNAMIC
-#      define _CARRDM_F   /* empty */                    ///< used for library calls
-#      define _CARRDM_V   /* empty */                    ///< used for library calls
+#   ifdef _LIB_LIBCARRDM_H
+#      define _CARRDM_F   /* empty */                                  ///< used for library calls
+#      define _CARRDM_V   extern CARRDM_C_DECLS                        ///< used for library calls
 #   else
-#      define _CARRDM_F   extern                         ///< used for library calls
-#      define _CARRDM_V   extern                         ///< used for library calls
+#      define _CARRDM_F   extern CARRDM_C_DECLS                        ///< used for library calls
+#      define _CARRDM_V   extern CARRDM_C_DECLS                        ///< used for library calls
 #   endif
 #endif
 
@@ -142,8 +140,6 @@
 #ifdef CARRDM_PMARK
 #pragma mark - Data Types
 #endif
-
-CARRDM_BEGIN_C_DECLS
 
 typedef struct carrdm_array_struct           carrdm_array;
 typedef struct carrdm_base_struct            carrdm_base;
@@ -292,5 +288,4 @@ _CARRDM_F const carrdm_reclock  * carrdm_reclock_ccast(const carrdm_base * objre
 _CARRDM_F carrdm_reclock        * carrdm_reclock_initialize(void * mem);
 
 
-CARRDM_END_C_DECLS
 #endif /* end of header */
