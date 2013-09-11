@@ -247,12 +247,12 @@
 				A0C06D1D17D9AB83000DCB6A /* libcarrdm-array.h */,
 				A0C06C7917D9343B000DCB6A /* libcarrdm-base.c */,
 				A0C06C7A17D9343B000DCB6A /* libcarrdm-base.h */,
+				A0C06CAF17D94D8A000DCB6A /* libcarrdm-core.c */,
+				A0C06CB017D94D8A000DCB6A /* libcarrdm-core.h */,
 				A0C06D3C17DB9135000DCB6A /* libcarrdm-data.c */,
 				A0C06D3D17DB9135000DCB6A /* libcarrdm-data.h */,
 				A0C06CB317D95079000DCB6A /* libcarrdm-lock.c */,
 				A0C06CB417D95079000DCB6A /* libcarrdm-lock.h */,
-				A0C06CAF17D94D8A000DCB6A /* libcarrdm-core.c */,
-				A0C06CB017D94D8A000DCB6A /* libcarrdm-core.h */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -972,6 +972,7 @@
 				A0C06CE617D9A98D000DCB6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0C06D0D17D9A9C4000DCB6A /* Build configuration list for PBXNativeTarget "CARRDM" */ = {
 			isa = XCConfigurationList;
@@ -980,6 +981,7 @@
 				A0C06D0F17D9A9C4000DCB6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0C06D1017D9A9C4000DCB6A /* Build configuration list for PBXNativeTarget "CARRDMTests" */ = {
 			isa = XCConfigurationList;
@@ -988,6 +990,7 @@
 				A0C06D1217D9A9C4000DCB6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0C06D1517D9AAB9000DCB6A /* Build configuration list for PBXAggregateTarget "CARRDM: OS X System" */ = {
 			isa = XCConfigurationList;
@@ -996,6 +999,7 @@
 				A0C06D1717D9AAB9000DCB6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0C06D3517DB7E30000DCB6A /* Build configuration list for PBXNativeTarget "test-array01" */ = {
 			isa = XCConfigurationList;
@@ -1004,6 +1008,7 @@
 				A0C06D3717DB7E30000DCB6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
