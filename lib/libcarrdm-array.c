@@ -127,15 +127,16 @@ int carrdm_array_add(carrdm_array * array, void * ptr, size_t idx)
    assert(array->len >= idx);
 
    // allocates memory
-   if ((array->len+1) < array->capacity)
+   if ((array->len+1) > array->capacity)
    {
-      size = sizeof(carrdm_base *) * (array->capacity + 1);
+      size = sizeof(carrdm_base *) * (array->len + 1);
       if ((list = realloc(array->list, size)) == NULL)
          return(CARRDM_NO_MEMORY);
-      array->list = list;
-      array->capacity++;
+      array->list     = list;
+      array->capacity = array->len + 1;
    };
 
+   // shifts contents of array
    for(pos = array->len; pos > idx; pos--)
       array->list[pos] = array->list[pos-1];
 
