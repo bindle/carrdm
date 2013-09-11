@@ -120,10 +120,10 @@ void   carrdm_mutex_lock(carrdm_mutex_t * mutex);
 int    carrdm_mutex_trylock(carrdm_mutex_t * mutex);
 void   carrdm_mutex_unlock(carrdm_mutex_t * mutex);
 
-carrdm_reallock * carrdm_reallock_cast(carrdm_base * objref);
+carrdm_reallock       * carrdm_reallock_cast(carrdm_base * objref);
 const carrdm_reallock * carrdm_reallock_ccast(const carrdm_base * objref);
-void              carrdm_reallock_destroy(void * objref);
-carrdm_reallock * carrdm_reallock_initialize(void * ptr);
+void                    carrdm_reallock_destroy(void * objref);
+carrdm_reallock       * carrdm_reallock_initialize(void * ptr);
 
 void   carrdm_spin_destroy(carrdm_spinlock_t * spinlock);
 int    carrdm_spin_init(carrdm_spinlock_t * spinlock);
