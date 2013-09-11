@@ -186,7 +186,7 @@ carrdm_definition carrdm_reclock_def =
 //             //
 /////////////////
 #ifdef APUTILS_PMARK
-#pragma mark - Functions
+#pragma mark - Baselock Objref Functions
 #endif
 
 carrdm_baselock * carrdm_baselock_cast(carrdm_base * objref)
@@ -241,6 +241,15 @@ carrdm_baselock * carrdm_baselock_initialize(void * ptr)
 }
 
 
+/////////////////
+//             //
+//  Functions  //
+//             //
+/////////////////
+#ifdef APUTILS_PMARK
+#pragma mark - Core Lock Functions
+#endif
+
 int carrdm_lock(void * ptr)
 {
    carrdm_baselock * baselock = ptr;
@@ -275,89 +284,6 @@ int carrdm_lock(void * ptr)
    carrdm_spin_unlock(&reallock->lock_meta_lock);
 
    return(0);
-}
-
-
-void carrdm_reallock_destroy(void * ptr)
-{
-   carrdm_reallock * objref = ptr;
-
-   assert(carrdm_is_def(objref, &carrdm_reallock_def) == CARRDM_FALSE);
-
-   carrdm_spin_destroy(&objref->lock_meta_lock);
-   carrdm_mutex_destroy(&objref->lock_lock);
-
-   return;
-}
-
-
-carrdm_reallock * carrdm_reallock_cast(carrdm_base * objref)
-{
-   assert(carrdm_is_def(objref, &carrdm_reallock_def) == CARRDM_TRUE);
-   return((carrdm_reallock *) objref);
-}
-
-
-const carrdm_reallock * carrdm_reallock_ccast(const carrdm_base * objref)
-{
-   assert(carrdm_is_def(objref, &carrdm_reallock_def) == CARRDM_TRUE);
-   return((const carrdm_reallock *) objref);
-}
-
-
-carrdm_reallock * carrdm_reallock_initialize(void * ptr)
-{
-   void            * mem;
-   carrdm_reallock * objref;
-
-   if ((mem = carrdm_alloc(ptr, &carrdm_baselock_def)) == NULL)
-      return(NULL);
-   if ((objref = (carrdm_reallock *)carrdm_base_initialize(mem)) == NULL)
-   {
-      if (ptr == NULL)
-         carrdm_release(mem);
-      return(NULL);
-   };
-
-   carrdm_spin_init(&objref->lock_meta_lock);
-   carrdm_mutex_init(&objref->lock_lock);
-
-   return(objref);
-}
-
-
-carrdm_reclock * carrdm_reclock_cast(carrdm_base * objref)
-{
-   assert(carrdm_is_def(objref, &carrdm_reclock_def) == CARRDM_TRUE);
-   return((carrdm_reclock *) objref);
-}
-
-
-const carrdm_reclock * carrdm_reclock_ccast(const carrdm_base * objref)
-{
-   assert(carrdm_is_def(objref, &carrdm_reclock_def) == CARRDM_TRUE);
-   return((const carrdm_reclock *) objref);
-}
-
-
-carrdm_reclock * carrdm_reclock_initialize(void * ptr)
-{
-   carrdm_reclock  * objref;
-   carrdm_reallock * reallock;
-
-   if ((ptr = carrdm_alloc(ptr, &carrdm_baselock_def)) == NULL)
-      return(NULL);
-
-   if ((objref = (carrdm_reclock *)carrdm_base_initialize(ptr)) == NULL)
-   {
-      carrdm_destroy(ptr);
-      return(NULL);
-   };
-
-   reallock                 = objref->supers.baselock.reallock;
-   reallock->lock_recursive = CARRDM_TRUE;
-
-   return(objref);
 }
 
 
@@ -421,6 +347,109 @@ int carrdm_unlock(void * ptr)
    };
    carrdm_spin_unlock(&reallock->lock_meta_lock);
    return(0);
+}
+
+
+
+/////////////////
+//             //
+//  Functions  //
+//             //
+/////////////////
+#ifdef APUTILS_PMARK
+#pragma mark - Reallock Objref Functions
+#endif
+
+void carrdm_reallock_destroy(void * ptr)
+{
+   carrdm_reallock * objref = ptr;
+
+   assert(carrdm_is_def(objref, &carrdm_reallock_def) == CARRDM_FALSE);
+
+   carrdm_spin_destroy(&objref->lock_meta_lock);
+   carrdm_mutex_destroy(&objref->lock_lock);
+
+   return;
+}
+
+
+carrdm_reallock * carrdm_reallock_cast(carrdm_base * objref)
+{
+   assert(carrdm_is_def(objref, &carrdm_reallock_def) == CARRDM_TRUE);
+   return((carrdm_reallock *) objref);
+}
+
+
+const carrdm_reallock * carrdm_reallock_ccast(const carrdm_base * objref)
+{
+   assert(carrdm_is_def(objref, &carrdm_reallock_def) == CARRDM_TRUE);
+   return((const carrdm_reallock *) objref);
+}
+
+
+carrdm_reallock * carrdm_reallock_initialize(void * ptr)
+{
+   void            * mem;
+   carrdm_reallock * objref;
+
+   if ((mem = carrdm_alloc(ptr, &carrdm_baselock_def)) == NULL)
+      return(NULL);
+   if ((objref = (carrdm_reallock *)carrdm_base_initialize(mem)) == NULL)
+   {
+      if (ptr == NULL)
+         carrdm_release(mem);
+      return(NULL);
+   };
+
+   carrdm_spin_init(&objref->lock_meta_lock);
+   carrdm_mutex_init(&objref->lock_lock);
+
+   return(objref);
+}
+
+
+/////////////////
+//             //
+//  Functions  //
+//             //
+/////////////////
+#ifdef APUTILS_PMARK
+#pragma mark - Reclock Objref Functions
+#endif
+
+
+carrdm_reclock * carrdm_reclock_cast(carrdm_base * objref)
+{
+   assert(carrdm_is_def(objref, &carrdm_reclock_def) == CARRDM_TRUE);
+   return((carrdm_reclock *) objref);
+}
+
+
+const carrdm_reclock * carrdm_reclock_ccast(const carrdm_base * objref)
+{
+   assert(carrdm_is_def(objref, &carrdm_reclock_def) == CARRDM_TRUE);
+   return((const carrdm_reclock *) objref);
+}
+
+
+carrdm_reclock * carrdm_reclock_initialize(void * ptr)
+{
+   carrdm_reclock  * objref;
+   carrdm_reallock * reallock;
+
+   if ((ptr = carrdm_alloc(ptr, &carrdm_baselock_def)) == NULL)
+      return(NULL);
+
+   if ((objref = (carrdm_reclock *)carrdm_base_initialize(ptr)) == NULL)
+   {
+      carrdm_destroy(ptr);
+      return(NULL);
+   };
+
+   reallock                 = objref->supers.baselock.reallock;
+   reallock->lock_recursive = CARRDM_TRUE;
+
+   return(objref);
 }
 
 
