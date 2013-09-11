@@ -103,6 +103,13 @@ carrdm_data * carrdm_data_cast(carrdm_base * objref)
 }
 
 
+const carrdm_data * carrdm_data_ccast(const carrdm_base * objref)
+{
+   assert(carrdm_is_def(objref, &carrdm_data_def) == CARRDM_TRUE);
+   return((const carrdm_data *) objref);
+}
+
+
 void carrdm_data_destroy(void * ptr)
 {
    carrdm_data * objref = ptr;

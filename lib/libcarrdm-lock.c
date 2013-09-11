@@ -121,6 +121,7 @@ int    carrdm_mutex_trylock(carrdm_mutex_t * mutex);
 void   carrdm_mutex_unlock(carrdm_mutex_t * mutex);
 
 carrdm_reallock * carrdm_reallock_cast(carrdm_base * objref);
+const carrdm_reallock * carrdm_reallock_ccast(const carrdm_base * objref);
 void              carrdm_reallock_destroy(void * objref);
 carrdm_reallock * carrdm_reallock_initialize(void * ptr);
 
@@ -193,6 +194,14 @@ carrdm_baselock * carrdm_baselock_cast(carrdm_base * objref)
    assert(carrdm_is_def(objref, &carrdm_baselock_def) == CARRDM_TRUE);
    return((carrdm_baselock *) objref);
 }
+
+
+const carrdm_baselock * carrdm_baselock_ccast(const carrdm_base * objref)
+{
+   assert(carrdm_is_def(objref, &carrdm_baselock_def) == CARRDM_TRUE);
+   return((const carrdm_baselock *) objref);
+}
+
 
 
 void carrdm_baselock_destroy(void * ptr)
@@ -289,6 +298,13 @@ carrdm_reallock * carrdm_reallock_cast(carrdm_base * objref)
 }
 
 
+const carrdm_reallock * carrdm_reallock_ccast(const carrdm_base * objref)
+{
+   assert(carrdm_is_def(objref, &carrdm_reallock_def) == CARRDM_TRUE);
+   return((const carrdm_reallock *) objref);
+}
+
+
 carrdm_reallock * carrdm_reallock_initialize(void * ptr)
 {
    void            * mem;
@@ -314,6 +330,13 @@ carrdm_reclock * carrdm_reclock_cast(carrdm_base * objref)
 {
    assert(carrdm_is_def(objref, &carrdm_reclock_def) == CARRDM_TRUE);
    return((carrdm_reclock *) objref);
+}
+
+
+const carrdm_reclock * carrdm_reclock_ccast(const carrdm_base * objref)
+{
+   assert(carrdm_is_def(objref, &carrdm_reclock_def) == CARRDM_TRUE);
+   return((const carrdm_reclock *) objref);
 }
 
 

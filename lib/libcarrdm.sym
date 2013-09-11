@@ -39,18 +39,28 @@ carrdm_baselock_def
 carrdm_data_def
 carrdm_reclock_def
 #
-# Array Functions
+# Array Objref Functions
 carrdm_array_add
 carrdm_array_append
 carrdm_array_cast
+carrdm_array_ccast
 carrdm_array_count
 carrdm_array_index
 carrdm_array_initialize
+carrdm_array_initialize_with_array
+carrdm_array_initialize_with_capacity
 carrdm_array_object
 carrdm_array_remove
 #
-# Base Functions
+# Base Objref Functions
 carrdm_base_cast
+carrdm_base_ccast
+carrdm_base_initialize
+#
+# Baselock Objref Functions
+carrdm_baselock_cast
+carrdm_baselock_ccast
+carrdm_baselock_initialize
 #
 # Core Functions
 carrdm_alloc
@@ -65,30 +75,22 @@ carrdm_retain
 carrdm_retain_count
 carrdm_set_value
 #
-# Data Functions
+# Core Lock Functions
+carrdm_lock
+carrdm_trylock
+carrdm_unlock
+#
+# Data Objref Functions
 carrdm_data_cast
+carrdm_data_ccast
 carrdm_data_initialize
 carrdm_data_initialize_with_data
 carrdm_data_initialize_with_memory
 carrdm_data_initialize_with_size
 carrdm_data_resize
 #
-# Initializers
-carrdm_array_initialize
-carrdm_array_initialize_with_array
-carrdm_array_initialize_with_capacity
-carrdm_base_initialize
-carrdm_baselock_initialize
-carrdm_data_initialize
-carrdm_data_initialize_with_data
-carrdm_data_initialize_with_memory
-carrdm_data_initialize_with_size
-carrdm_reclock_initialize
-#
-# Lock Functions
-carrdm_baselock_cast
-carrdm_lock
+# Reclock Objref Functions
 carrdm_reclock_cast
-carrdm_trylock
-carrdm_unlock
+carrdm_reclock_ccast
+carrdm_reclock_initialize
 # end of m4 file

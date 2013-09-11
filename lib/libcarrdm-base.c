@@ -100,6 +100,13 @@ carrdm_base * carrdm_base_cast(carrdm_base * objref)
 }
 
 
+const carrdm_base * carrdm_base_ccast(const carrdm_base * objref)
+{
+   assert(carrdm_is_def(objref, &carrdm_base_def) == CARRDM_TRUE);
+   return((const carrdm_base *) objref);
+}
+
+
 int carrdm_base_getter(const void * ptr, uint64_t valid, void * outval)
 {
    const carrdm_base * objref = ptr;
