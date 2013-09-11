@@ -56,7 +56,7 @@ DEFS					=
 # automake targets
 check_PROGRAMS				=
 doc_DATA				=
-include_HEADERS				= include/carrdm.h
+include_HEADERS				= include/carrdm.h include/carrdm_inline.h
 lib_LTLIBRARIES				= lib/libcarrdm.la
 man_MANS				=
 info_TEXINFOS				=
@@ -112,6 +112,8 @@ lib_libcarrdm_la_SOURCES		= $(include_HEADERS) \
 					  lib/libcarrdm-core.h \
 					  lib/libcarrdm-data.c \
 					  lib/libcarrdm-data.h \
+					  lib/libcarrdm-inline.c \
+					  lib/libcarrdm-inline.h \
 					  lib/libcarrdm-lock.c \
 					  lib/libcarrdm-lock.h
 

@@ -112,16 +112,27 @@
 #endif
 
 
+#ifndef CARRDM_INLINE
+#  if __GNUC__ && !__GNUC_STDC_INLINE__
+#     define CARRDM_INLINE extern CARRDM_C_DECLS inline
+#  else
+#     define CARRDM_INLINE inline CARRDM_C_DECLS
+#  endif
+#endif
+
+
 // Exports function type
 #ifdef WIN32
 #   ifdef _LIB_LIBCARRDM_H
 #      define _CARRDM_F   extern CARRDM_C_DECLS __declspec(dllexport)   ///< used for library calls
 #      define _CARRDM_V   extern CARRDM_C_DECLS __declspec(dllexport)   ///< used for library calls
 #   else
+#      define _CARRDM_I   CARRDM_INLINE         __declspec(dllimport)   ///< used for library calls
 #      define _CARRDM_F   extern CARRDM_C_DECLS __declspec(dllimport)   ///< used for library calls
 #      define _CARRDM_V   extern CARRDM_C_DECLS __declspec(dllimport)   ///< used for library calls
 #   endif
 #else
+#   define _CARRDM_I      CARRDM_INLINE                                ///< used for library calls
 #   ifdef _LIB_LIBCARRDM_H
 #      define _CARRDM_F   /* empty */                                  ///< used for library calls
 #      define _CARRDM_V   extern CARRDM_C_DECLS                        ///< used for library calls
@@ -287,5 +298,16 @@ _CARRDM_F carrdm_reclock        * carrdm_reclock_cast(carrdm_base * objref);
 _CARRDM_F const carrdm_reclock  * carrdm_reclock_ccast(const carrdm_base * objref);
 _CARRDM_F carrdm_reclock        * carrdm_reclock_initialize(void * mem);
 
+
+////////////////////////
+//                    //
+//  Inline Functions  //
+//                    //
+////////////////////////
+#ifdef CARRDM_PMARK
+#pragma mark - Inline Functions
+#endif
+
+#include <carrdm_inline.h>
 
 #endif /* end of header */
