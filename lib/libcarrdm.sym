@@ -42,8 +42,6 @@ carrdm_reclock_def
 # Array Objref Functions
 carrdm_array_add
 carrdm_array_append
-carrdm_array_cast
-carrdm_array_ccast
 carrdm_array_count
 carrdm_array_index
 carrdm_array_initialize
@@ -53,19 +51,13 @@ carrdm_array_object
 carrdm_array_remove
 #
 # Base Objref Functions
-carrdm_base_cast
-carrdm_base_ccast
 carrdm_base_initialize
 #
 # Baselock Objref Functions
-carrdm_baselock_cast
-carrdm_baselock_ccast
 carrdm_baselock_initialize
 #
 # Core Functions
 carrdm_alloc
-carrdm_cast
-carrdm_ccast
 carrdm_destroy
 carrdm_get_value
 carrdm_is_def
@@ -83,8 +75,6 @@ carrdm_trylock
 carrdm_unlock
 #
 # Data Objref Functions
-carrdm_data_cast
-carrdm_data_ccast
 carrdm_data_initialize
 carrdm_data_initialize_with_data
 carrdm_data_initialize_with_memory
@@ -92,7 +82,5 @@ carrdm_data_initialize_with_size
 carrdm_data_resize
 #
 # Reclock Objref Functions
-carrdm_reclock_cast
-carrdm_reclock_ccast
 carrdm_reclock_initialize
 # end of m4 file

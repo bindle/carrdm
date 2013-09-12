@@ -106,6 +106,16 @@ carrdm_definition carrdm_array_def =
 };
 
 
+////////////////////////
+//                    //
+//  Inline Functions  //
+//                    //
+////////////////////////
+#ifdef CARRDM_PMARK
+#pragma mark - Inline Functions
+#endif
+
+
 /////////////////
 //             //
 //  Functions  //
@@ -154,20 +164,6 @@ int carrdm_array_append(carrdm_array * array, void * ptr)
    assert(carrdm_is_def(array, &carrdm_array_def) == CARRDM_TRUE);
    assert(carrdm_is_valid_object(ptr)             == CARRDM_TRUE);
    return(carrdm_array_add(array, ptr, array->len));
-}
-
-
-carrdm_array * carrdm_array_cast(carrdm_base * objref)
-{
-   assert(carrdm_is_def(objref, &carrdm_array_def) == CARRDM_TRUE);
-   return((carrdm_array *) objref);
-}
-
-
-const carrdm_array * carrdm_array_ccast(const carrdm_base * objref)
-{
-   assert(carrdm_is_def(objref, &carrdm_array_def) == CARRDM_TRUE);
-   return((const carrdm_array *) objref);
 }
 
 

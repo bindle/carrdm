@@ -51,55 +51,16 @@
 #include <inttypes.h>
 #include <sys/types.h>
 #include <stdlib.h>
+#include <assert.h>
 
 
-///////////////////
-//               //
-//  Definitions  //
-//               //
-///////////////////
+////////////////////////
+//                    //
+//  Inline Functions  //
+//                    //
+////////////////////////
 #ifdef CARRDM_PMARK
-#pragma mark - Definitions
-#endif
-
-
-//////////////
-//          //
-//  Macros  //
-//          //
-//////////////
-#ifdef CARRDM_PMARK
-#pragma mark - Macros
-#endif
-
-//////////////////
-//              //
-//  Data Types  //
-//              //
-//////////////////
-#ifdef CARRDM_PMARK
-#pragma mark - Data Types
-#endif
-
-
-/////////////////
-//             //
-//  Variables  //
-//             //
-/////////////////
-#ifdef CARRDM_PMARK
-#pragma mark - Variables
-#endif
-
-
-
-//////////////////
-//              //
-//  Prototypes  //
-//              //
-//////////////////
-#ifdef CARRDM_PMARK
-#pragma mark - Prototypes
+#pragma mark - Inline Functions
 #endif
 
 

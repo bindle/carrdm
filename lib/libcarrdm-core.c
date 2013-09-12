@@ -83,24 +83,6 @@ void * carrdm_alloc(void * mem, const carrdm_definition * def)
 }
 
 
-carrdm_base * carrdm_cast(void * objref)
-{
-   assert(objref != NULL);
-   if (carrdm_is_def(objref, &carrdm_base_def) == CARRDM_TRUE);
-      return((carrdm_base *) objref);
-   return(NULL);
-}
-
-
-const carrdm_base * carrdm_ccast(const void * objref)
-{
-   assert(objref != NULL);
-   if (carrdm_is_def(objref, &carrdm_base_def) == CARRDM_TRUE);
-      return((const carrdm_base *) objref);
-   return(NULL);
-}
-
-
 void carrdm_destroy(void * mem)
 {
    carrdm_base             * objref = mem;
