@@ -44,9 +44,6 @@
 		A0C06D3E17DB9135000DCB6A /* libcarrdm-data.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D3C17DB9135000DCB6A /* libcarrdm-data.c */; };
 		A0C06D3F17DB9135000DCB6A /* libcarrdm-data.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D3C17DB9135000DCB6A /* libcarrdm-data.c */; };
 		A0C06D4017DB9135000DCB6A /* libcarrdm-data.h in Headers */ = {isa = PBXBuildFile; fileRef = A0C06D3D17DB9135000DCB6A /* libcarrdm-data.h */; };
-		A0C06D5417E0E320000DCB6A /* libcarrdm-inline.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D5217E0E320000DCB6A /* libcarrdm-inline.c */; };
-		A0C06D5517E0E320000DCB6A /* libcarrdm-inline.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D5217E0E320000DCB6A /* libcarrdm-inline.c */; };
-		A0C06D5617E0E320000DCB6A /* libcarrdm-inline.h in Headers */ = {isa = PBXBuildFile; fileRef = A0C06D5317E0E320000DCB6A /* libcarrdm-inline.h */; };
 		A0C06D5817E0E39E000DCB6A /* carrdm_inline.h in Headers */ = {isa = PBXBuildFile; fileRef = A0C06D5717E0E39E000DCB6A /* carrdm_inline.h */; };
 /* End PBXBuildFile section */
 
@@ -149,8 +146,6 @@
 		A0C06D2F17DB7E30000DCB6A /* test-array01 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "test-array01"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C06D3C17DB9135000DCB6A /* libcarrdm-data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "libcarrdm-data.c"; sourceTree = "<group>"; };
 		A0C06D3D17DB9135000DCB6A /* libcarrdm-data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "libcarrdm-data.h"; sourceTree = "<group>"; };
-		A0C06D5217E0E320000DCB6A /* libcarrdm-inline.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "libcarrdm-inline.c"; sourceTree = "<group>"; };
-		A0C06D5317E0E320000DCB6A /* libcarrdm-inline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "libcarrdm-inline.h"; sourceTree = "<group>"; };
 		A0C06D5717E0E39E000DCB6A /* carrdm_inline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carrdm_inline.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -259,8 +254,6 @@
 				A0C06CB017D94D8A000DCB6A /* libcarrdm-core.h */,
 				A0C06D3C17DB9135000DCB6A /* libcarrdm-data.c */,
 				A0C06D3D17DB9135000DCB6A /* libcarrdm-data.h */,
-				A0C06D5217E0E320000DCB6A /* libcarrdm-inline.c */,
-				A0C06D5317E0E320000DCB6A /* libcarrdm-inline.h */,
 				A0C06CB317D95079000DCB6A /* libcarrdm-lock.c */,
 				A0C06CB417D95079000DCB6A /* libcarrdm-lock.h */,
 			);
@@ -362,7 +355,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0C06D5817E0E39E000DCB6A /* carrdm_inline.h in Headers */,
-				A0C06D5617E0E320000DCB6A /* libcarrdm-inline.h in Headers */,
 				A0C06D2817D9AD16000DCB6A /* carrdm.h in Headers */,
 				A0C06D4017DB9135000DCB6A /* libcarrdm-data.h in Headers */,
 			);
@@ -521,7 +513,6 @@
 				A0C06D3E17DB9135000DCB6A /* libcarrdm-data.c in Sources */,
 				A0C06D2517D9ACFE000DCB6A /* libcarrdm-lock.c in Sources */,
 				A0C06D2717D9AD04000DCB6A /* libcarrdm-core.c in Sources */,
-				A0C06D5417E0E320000DCB6A /* libcarrdm-inline.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,7 +525,6 @@
 				A0C06D3F17DB9135000DCB6A /* libcarrdm-data.c in Sources */,
 				A0C06D2417D9ACFE000DCB6A /* libcarrdm-lock.c in Sources */,
 				A0C06D2617D9AD03000DCB6A /* libcarrdm-core.c in Sources */,
-				A0C06D5517E0E320000DCB6A /* libcarrdm-inline.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

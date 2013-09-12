@@ -112,8 +112,6 @@ lib_libcarrdm_la_SOURCES		= $(include_HEADERS) \
 					  lib/libcarrdm-core.h \
 					  lib/libcarrdm-data.c \
 					  lib/libcarrdm-data.h \
-					  lib/libcarrdm-inline.c \
-					  lib/libcarrdm-inline.h \
 					  lib/libcarrdm-lock.c \
 					  lib/libcarrdm-lock.h
 
