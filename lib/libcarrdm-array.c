@@ -115,6 +115,9 @@ carrdm_definition carrdm_array_def =
 #pragma mark - Inline Functions
 #endif
 
+extern inline carrdm_array       * carrdm_array_cast(void * objref);
+extern inline const carrdm_array * carrdm_array_ccast(const void * objref);
+
 
 /////////////////
 //             //

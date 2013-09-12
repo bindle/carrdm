@@ -63,6 +63,50 @@
 #pragma mark - Inline Functions
 #endif
 
+_CARRDM_I carrdm_array * carrdm_array_cast(void * objref)
+{
+   if (carrdm_is_def(objref, &carrdm_array_def) == CARRDM_TRUE)
+      return((carrdm_array *)objref);
+   return(NULL);
+}
+
+
+_CARRDM_I const carrdm_array * carrdm_array_ccast(const void * objref)
+{
+   if (carrdm_is_def(objref, &carrdm_array_def) == CARRDM_TRUE)
+      return((const carrdm_array *)objref);
+   return(NULL);
+}
+
+
+_CARRDM_I carrdm_base * carrdm_base_cast(void * objref)
+{
+   return((carrdm_base *)carrdm_cast(objref));
+}
+
+
+_CARRDM_I const carrdm_base * carrdm_base_ccast(const void * objref)
+{
+   return((const carrdm_base *)carrdm_ccast(objref));
+}
+
+
+_CARRDM_I carrdm_baselock * carrdm_baselock_cast(void * objref)
+{
+   if (carrdm_is_def(objref, &carrdm_baselock_def) == CARRDM_TRUE)
+      return((carrdm_baselock *)objref);
+   return(NULL);
+}
+
+
+_CARRDM_I const carrdm_baselock * carrdm_baselock_ccast(const void * objref)
+{
+   if (carrdm_is_def(objref, &carrdm_baselock_def) == CARRDM_TRUE)
+      return((const carrdm_baselock *)objref);
+   return(NULL);
+}
+
+
 _CARRDM_I carrdm * carrdm_cast(void * objref)
 {
    if (carrdm_is_def(objref, &carrdm_base_def) == CARRDM_TRUE)
@@ -75,6 +119,22 @@ _CARRDM_I const carrdm * carrdm_ccast(const void * objref)
 {
    if (carrdm_is_def(objref, &carrdm_base_def) == CARRDM_TRUE)
       return((const carrdm *)objref);
+   return(NULL);
+}
+
+
+_CARRDM_I carrdm_data * carrdm_data_cast(void * objref)
+{
+   if (carrdm_is_def(objref, &carrdm_data_def) == CARRDM_TRUE)
+      return((carrdm_data *)objref);
+   return(NULL);
+}
+
+
+_CARRDM_I const carrdm_data  * carrdm_data_ccast(const void * objref)
+{
+   if (carrdm_is_def(objref, &carrdm_data_def) == CARRDM_TRUE)
+      return((const carrdm_data *)objref);
    return(NULL);
 }
 
@@ -168,6 +228,22 @@ _CARRDM_I int carrdm_is_valid_object(const void * ptr)
    if (objref->retain_count < 1)
       return(CARRDM_FALSE);
    return(CARRDM_TRUE);
+}
+
+
+_CARRDM_I carrdm_reclock * carrdm_reclock_cast(void * objref)
+{
+   if (carrdm_is_def(objref, &carrdm_reclock_def) == CARRDM_TRUE)
+      return((carrdm_reclock *)objref);
+   return(NULL);
+}
+
+
+_CARRDM_I const carrdm_reclock  * carrdm_reclock_ccast(const void * objref)
+{
+   if (carrdm_is_def(objref, &carrdm_reclock_def) == CARRDM_TRUE)
+      return((const carrdm_reclock *)objref);
+   return(NULL);
 }
 
 

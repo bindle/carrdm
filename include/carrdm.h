@@ -237,7 +237,8 @@ _CARRDM_V carrdm_definition carrdm_reclock_def;
 // array objref functions
 _CARRDM_F int                  carrdm_array_add(carrdm_array * array, void * ptr, size_t idx);
 _CARRDM_F int                  carrdm_array_append(carrdm_array * array, void * ptr);
-_CARRDM_I int                  carrdm_array_ccast(const void * srcref);
+_CARRDM_I carrdm_array       * carrdm_array_cast(void * objref);
+_CARRDM_I const carrdm_array * carrdm_array_ccast(const void * objref);
 _CARRDM_F size_t               carrdm_array_count(carrdm_array * array);
 _CARRDM_F ssize_t              carrdm_array_index(carrdm_array * array, void * ptr);
 _CARRDM_F carrdm_array       * carrdm_array_initialize(void * mem);
@@ -248,10 +249,14 @@ _CARRDM_F int                  carrdm_array_remove(carrdm_array * array, size_t 
 
 
 // base objref functions
+_CARRDM_I carrdm_base        * carrdm_base_cast(void * objref);
+_CARRDM_I const carrdm_base  * carrdm_base_ccast(const void * objref);
 _CARRDM_F carrdm_base        * carrdm_base_initialize(void * mem);
 
 
 // baselock objref functions
+_CARRDM_I carrdm_baselock       * carrdm_baselock_cast(void * objref);
+_CARRDM_I const carrdm_baselock * carrdm_baselock_ccast(const void * objref);
 _CARRDM_F carrdm_baselock       * carrdm_baselock_initialize(void * mem);
 
 
@@ -277,6 +282,8 @@ _CARRDM_F int                  carrdm_trylock(void * objref);
 _CARRDM_F int                  carrdm_unlock(void * objref);
 
 // data objref functions
+_CARRDM_I carrdm_data        * carrdm_data_cast(void * objref);
+_CARRDM_I const carrdm_data  * carrdm_data_ccast(const void * objref);
 _CARRDM_F carrdm_data        * carrdm_data_initialize(void * mem);
 _CARRDM_F carrdm_data        * carrdm_data_initialize_with_data(void * mem, const void * data);
 _CARRDM_F carrdm_data        * carrdm_data_initialize_with_memory(void * mem, const void * src, size_t size);
@@ -285,6 +292,8 @@ _CARRDM_F int                  carrdm_data_resize(carrdm_data * objref, size_t s
 
 
 // reclock objref functions
+_CARRDM_I carrdm_reclock        * carrdm_reclock_cast(void * objref);
+_CARRDM_I const carrdm_reclock  * carrdm_reclock_ccast(const void * objref);
 _CARRDM_F carrdm_reclock        * carrdm_reclock_initialize(void * mem);
 
 

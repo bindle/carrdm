@@ -177,6 +177,20 @@ carrdm_definition carrdm_reclock_def =
 };
 
 
+////////////////////////
+//                    //
+//  Inline Functions  //
+//                    //
+////////////////////////
+#ifdef CARRDM_PMARK
+#pragma mark - Inline Functions
+#endif
+
+extern inline carrdm_baselock       * carrdm_baselock_cast(void * objref);
+extern inline const carrdm_baselock * carrdm_baselock_ccast(const void * objref);
+extern inline carrdm_reclock        * carrdm_reclock_cast(void * objref);
+extern inline const carrdm_reclock  * carrdm_reclock_ccast(const void * objref);
+
 /////////////////
 //             //
 //  Functions  //

@@ -87,6 +87,19 @@ carrdm_definition carrdm_data_def =
 };
 
 
+////////////////////////
+//                    //
+//  Inline Functions  //
+//                    //
+////////////////////////
+#ifdef CARRDM_PMARK
+#pragma mark - Inline Functions
+#endif
+
+extern inline carrdm_data       * carrdm_data_cast(void * objref);
+extern inline const carrdm_data * carrdm_data_ccast(const void * objref);
+
+
 /////////////////
 //             //
 //  Functions  //
