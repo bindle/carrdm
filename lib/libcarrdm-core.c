@@ -51,6 +51,26 @@
 #include <stdio.h>
 
 
+////////////////////////
+//                    //
+//  Inline Functions  //
+//                    //
+////////////////////////
+#ifdef CARRDM_PMARK
+#pragma mark - Inline Functions
+#endif
+
+extern inline carrdm       * carrdm_cast(void * objref);
+extern inline const carrdm * carrdm_ccast(const void * objref);
+extern inline int            carrdm_is_def(const void * objref, const carrdm_definition * def);
+extern inline int            carrdm_is_object(const void * objref);
+extern inline int            carrdm_is_type(const void * objref, uint64_t type);
+extern inline int            carrdm_is_valid_object(const void * objref);
+extern inline void           carrdm_release(void * objref);
+extern inline void           carrdm_retain(void * objref);
+extern inline uint64_t       carrdm_retain_count(const void * objref);
+
+
 /////////////////
 //             //
 //  Functions  //
@@ -127,126 +147,6 @@ int carrdm_get_value(void * ptr, uint64_t valid, void * outval)
             return(err);
 
    return(CARRDM_UNKNOWN_PARAM);
-}
-
-
-int carrdm_is_def(const void * ptr, const carrdm_definition * def)
-{
-   const carrdm_base       * objref;
-   const carrdm_definition * obj_def;
-
-   assert(def != NULL);
-   assert(carrdm_is_object(ptr) == CARRDM_TRUE);
-
-   objref  = ptr;
-   obj_def = objref->def;
-
-   while((obj_def))
-   {
-      if (obj_def->type == def->type)
-         if (obj_def->size == def->size)
-            return(CARRDM_TRUE);
-      obj_def = obj_def->super_def;
-   };
-
-   return(CARRDM_FALSE);
-}
-
-
-int carrdm_is_object(const void * ptr)
-{
-   const carrdm_base       * objref = ptr;
-   const carrdm_definition * def;
-   int   count;
-
-   if (objref == NULL)
-      return(CARRDM_FALSE);
-   if (objref->magic != CARRDM_MAGIC)
-      return(CARRDM_FALSE);
-   if (objref->def == NULL)
-      return(CARRDM_FALSE);
-   if (objref->def->size < sizeof(carrdm_base))
-      return(CARRDM_FALSE);
-
-   def   = objref->def;
-   count = 0;
-   while((def->super_def != NULL) && (++count < 100))
-   {
-      if (def->size < def->super_def->size)
-         return(CARRDM_FALSE);
-      def = def->super_def;
-   };
-
-   if (def->super_def != NULL)
-      return(CARRDM_FALSE);
-   if (def->type != CARRDM_TYPE_BASE)
-      return(CARRDM_FALSE);
-
-   return(CARRDM_TRUE);
-}
-
-
-int carrdm_is_type(const void * ptr, uint64_t type)
-{
-   const carrdm_base       * objref;
-   const carrdm_definition * obj_def;
-
-   assert(type != 0);
-   assert(carrdm_is_object(ptr) == CARRDM_TRUE);
-
-   objref  = ptr;
-   obj_def = objref->def;
-
-   while((obj_def))
-   {
-      if (obj_def->type == type)
-         return(CARRDM_TRUE);
-      obj_def = obj_def->super_def;
-   };
-
-   return(CARRDM_FALSE);
-}
-
-
-int carrdm_is_valid_object(const void * ptr)
-{
-   const carrdm_base * objref = ptr;
-   if (carrdm_is_object(objref) == CARRDM_FALSE)
-      return(CARRDM_FALSE);
-   if (objref->retain_count < 1)
-      return(CARRDM_FALSE);
-   return(CARRDM_TRUE);
-}
-
-
-void carrdm_release(void * ptr)
-{
-   carrdm_base * objref = ptr;
-   size_t count;
-   assert(carrdm_is_valid_object(ptr) == CARRDM_TRUE);
-   if ((count = __sync_fetch_and_sub(&objref->retain_count, 1)) <= 1)
-   {
-      carrdm_destroy(objref);
-      return;
-   };
-   return;
-}
-
-
-void carrdm_retain(void * ptr)
-{
-   carrdm_base * objref = ptr;
-   assert(carrdm_is_valid_object(ptr) == CARRDM_TRUE);
-   __sync_fetch_and_add(&objref->retain_count, 1);
-   return;
-}
-
-
-uint64_t carrdm_retain_count(const void * ptr)
-{
-   const carrdm_base * objref = ptr;
-   assert(carrdm_is_valid_object(ptr) == CARRDM_TRUE);
-   return(__sync_fetch_and_add(&objref->retain_count, 0));
 }
 
 

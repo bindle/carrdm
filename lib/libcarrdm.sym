@@ -58,6 +58,8 @@ carrdm_baselock_initialize
 #
 # Core Functions
 carrdm_alloc
+carrdm_cast
+carrdm_ccast
 carrdm_destroy
 carrdm_get_value
 carrdm_is_def
