@@ -76,14 +76,21 @@ int  carrdm_data_setter(void * ptr, uint64_t valid, const void * inval);
 
 carrdm_definition carrdm_data_def =
 {
-
-   1,                         // initialized;
+   sizeof(carrdm_definition), // def_size
+   CARRDM_API_CURRENT,        // def_api_current
+   CARRDM_API_REVISION,       // def_api_revision
+   CARRDM_API_AGE,            // def_api_age
+   CARRDM_API_CURRENT,        // obj_api_current
+   CARRDM_API_REVISION,       // obj_api_revision
+   CARRDM_API_AGE,            // obj_api_age
+   NULL,                      // obj_data
    &carrdm_data_def,          // super_def;
    CARRDM_TYPE_DATA,          // type;
    sizeof(carrdm_data),       // size;
    carrdm_data_destroy,       // destroy
    carrdm_data_getter,        // getter
-   carrdm_data_setter         // setter
+   carrdm_data_setter,        // setter
+   NULL                       // is_object
 };
 
 

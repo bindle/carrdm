@@ -140,40 +140,61 @@ void   carrdm_spin_unlock(carrdm_spinlock_t * spinlock);
 
 carrdm_definition carrdm_baselock_def =
 {
-
-   1,                            // initialized
+   sizeof(carrdm_definition),    // def_size
+   CARRDM_API_CURRENT,           // def_api_current
+   CARRDM_API_REVISION,          // def_api_revision
+   CARRDM_API_AGE,               // def_api_age
+   CARRDM_API_CURRENT,           // obj_api_current
+   CARRDM_API_REVISION,          // obj_api_revision
+   CARRDM_API_AGE,               // obj_api_age
+   NULL,                         // obj_data
    &carrdm_base_def,             // super_def
    CARRDM_TYPE_BASELOCK,         // type
    sizeof(carrdm_baselock),      // size
    carrdm_baselock_destroy,      // destroy
    NULL,                         // getter
-   NULL                          // setter
+   NULL,                         // setter
+   NULL                          // is_object
 };
 
 
 carrdm_definition carrdm_reallock_def =
 {
-
-   1,                            // initialized
+   sizeof(carrdm_definition),    // def_size
+   CARRDM_API_CURRENT,           // def_api_current
+   CARRDM_API_REVISION,          // def_api_revision
+   CARRDM_API_AGE,               // def_api_age
+   CARRDM_API_CURRENT,           // obj_api_current
+   CARRDM_API_REVISION,          // obj_api_revision
+   CARRDM_API_AGE,               // obj_api_age
+   NULL,                         // obj_data
    &carrdm_base_def,             // super_def
    CARRDM_TYPE_BASELOCK,         // type
    sizeof(carrdm_reallock),      // size
    carrdm_reallock_destroy,      // destroy
    NULL,                         // getter
-   NULL                          // setter
+   NULL,                         // setter
+   NULL                          // is_object
 };
 
 
 carrdm_definition carrdm_reclock_def =
 {
-
-   1,                            // initialized
+   sizeof(carrdm_definition),    // def_size
+   CARRDM_API_CURRENT,           // def_api_current
+   CARRDM_API_REVISION,          // def_api_revision
+   CARRDM_API_AGE,               // def_api_age
+   CARRDM_API_CURRENT,           // obj_api_current
+   CARRDM_API_REVISION,          // obj_api_revision
+   CARRDM_API_AGE,               // obj_api_age
+   NULL,                         // obj_data
    &carrdm_baselock_def,         // super_def
    CARRDM_TYPE_RECLOCK,          // type
    sizeof(carrdm_reclock),       // size
    NULL,                         // destroy
    NULL,                         // getter
-   NULL                          // setter
+   NULL,                         // setter
+   NULL                          // is_object
 };
 
 

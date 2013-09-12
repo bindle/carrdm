@@ -95,14 +95,21 @@ void carrdm_array_destroy(void * ptr);
 
 carrdm_definition carrdm_array_def =
 {
-
-   1,                         // initialized;
+   sizeof(carrdm_definition), // def_size
+   CARRDM_API_CURRENT,        // def_api_current
+   CARRDM_API_REVISION,       // def_api_revision
+   CARRDM_API_AGE,            // def_api_age
+   CARRDM_API_CURRENT,        // obj_api_current
+   CARRDM_API_REVISION,       // obj_api_revision
+   CARRDM_API_AGE,            // obj_api_age
+   NULL,                      // obj_data
    &carrdm_base_def,          // super_def;
    CARRDM_TYPE_ARRAY,         // type;
    sizeof(carrdm_array),      // size;
    carrdm_array_destroy,      // destroy
    NULL,                      // getter
-   NULL                       // setter
+   NULL,                      // setter
+   NULL                       // is_object
 };
 
 

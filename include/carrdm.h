@@ -64,6 +64,12 @@
 
 #define CARRDM_MAGIC             0x43415252444d4600LLU // CARRDMF
 
+
+#define CARRDM_API_CURRENT       1LLU
+#define CARRDM_API_REVISION      0LLU
+#define CARRDM_API_AGE           0LLU
+
+
 #define carrdm_type(num)         (num &      0xffffffffffff0000LLU)
 #define CARRDM_TYPE_ARRAY        carrdm_type(0x4341525244410000LLU) // CARRDA
 #define CARRDM_TYPE_BASE         carrdm_type(0x4341525244420000LLU) // CARRDB
@@ -159,14 +165,21 @@ typedef struct carrdm_reclock_struct         carrdm_reclock;
 
 struct carrdm_definition_struct
 {
-
-   uint64_t                  initialized;
+   size_t                    def_size;
+   uint64_t                  def_api_current;
+   uint64_t                  def_api_revision;
+   uint64_t                  def_api_age;
+   uint64_t                  obj_api_current;
+   uint64_t                  obj_api_revision;
+   uint64_t                  obj_api_age;
+   void                    * obj_data;
    const carrdm_definition * super_def;
    uint64_t                  type;
    size_t                    size;
    void   (* destroy)(void * objref);
    int    (* getter)(const void * objref, uint64_t valid, void * outval);
    int    (* setter)(void * objref, uint64_t valid, const void * inval);
+   int    (* is_object)(const void * objref, const carrdm_definition * def);
 };
 
 

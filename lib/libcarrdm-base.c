@@ -72,14 +72,21 @@ int carrdm_base_getter(const void * objref, uint64_t valid, void * outval);
 
 carrdm_definition carrdm_base_def =
 {
-
-   1,                         // initialized;
+   sizeof(carrdm_definition), // def_size
+   CARRDM_API_CURRENT,        // def_api_current
+   CARRDM_API_REVISION,       // def_api_revision
+   CARRDM_API_AGE,            // def_api_age
+   CARRDM_API_CURRENT,        // obj_api_current
+   CARRDM_API_REVISION,       // obj_api_revision
+   CARRDM_API_AGE,            // obj_api_age
+   NULL,                      // obj_data
    NULL,                      // super_def;
    CARRDM_TYPE_BASE,          // type;
    sizeof(carrdm_base),       // size;
    NULL,                      // destroy
    carrdm_base_getter,        // getter
-   NULL                       // setter
+   NULL,                      // setter
+   NULL                       // is_object
 };
 
 

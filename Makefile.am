@@ -96,7 +96,8 @@ lib_libcarrdm_la_DEPENDENCIES		= lib/libcarrdm.sym \
 					  Makefile
 lib_libcarrdm_la_CPPFLAGS		= $(AM_CPPFLAGS) -I$(top_srcdir)/lib
 lib_libcarrdm_la_LIBADD			=
-lib_libcarrdm_la_LDFLAGS		= -rpath'$(libdir)'\
+lib_libcarrdm_la_LDFLAGS		= -static \
+					  -rpath'$(libdir)'\
 					  -version-info $(LIB_VERSION_INFO) \
 					  $(AM_LDFLAGS) \
 					  -export-symbols $(srcdir)/lib/libcarrdm.sym

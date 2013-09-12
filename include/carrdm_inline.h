@@ -176,6 +176,12 @@ _CARRDM_I int carrdm_is_object(const void * ptr)
       return(CARRDM_FALSE);
    if (objref->def == NULL)
       return(CARRDM_FALSE);
+   if (objref->def->def_size < sizeof(carrdm_definition))
+      return(CARRDM_FALSE);
+   if ((CARRDM_API_CURRENT - CARRDM_API_AGE)  > objref->def->def_api_current)
+      return(CARRDM_FALSE);
+   if ((objref->def->def_api_current - objref->def->def_api_age)  > CARRDM_API_CURRENT)
+      return(CARRDM_FALSE);
    if (objref->def->size < sizeof(carrdm_base))
       return(CARRDM_FALSE);
 
@@ -186,6 +192,9 @@ _CARRDM_I int carrdm_is_object(const void * ptr)
    {
       if (obj_def->size < obj_def->super_def->size)
          return(CARRDM_FALSE);
+      if ((obj_def->is_object))
+         if (obj_def->is_object(ptr, obj_def) == CARRDM_FALSE)
+            return(CARRDM_FALSE);
       obj_def = obj_def->super_def;
    };
 
