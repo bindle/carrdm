@@ -275,8 +275,8 @@ _CARRDM_F carrdm_baselock       * carrdm_baselock_initialize(void * mem);
 
 // core functions
 _CARRDM_F void               * carrdm_alloc(void * mem, const carrdm_definition * def);
-_CARRDM_I carrdm *             carrdm_cast(void * objref);
-_CARRDM_I const carrdm *       carrdm_ccast(const void * objref);
+_CARRDM_I carrdm             * carrdm_cast(void * objref);
+_CARRDM_I const carrdm       * carrdm_ccast(const void * objref);
 _CARRDM_F void                 carrdm_destroy(void * mem);
 _CARRDM_F int                  carrdm_get_value(void * objref, uint64_t valid, void * outval);
 _CARRDM_I int                  carrdm_is_def(const void * objref, const carrdm_definition * def);
