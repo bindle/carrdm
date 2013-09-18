@@ -7,44 +7,35 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		A0C06D1417D9AAB9000DCB6A /* CARRDM: OS X System */ = {
+		A0C06D1417D9AAB9000DCB6A /* carrdm: OS X System */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = A0C06D1517D9AAB9000DCB6A /* Build configuration list for PBXAggregateTarget "CARRDM: OS X System" */;
+			buildConfigurationList = A0C06D1517D9AAB9000DCB6A /* Build configuration list for PBXAggregateTarget "carrdm: OS X System" */;
 			buildPhases = (
 			);
 			dependencies = (
-				A0C06D1917D9AAC3000DCB6A /* PBXTargetDependency */,
-				A0C06D1B17D9AAC3000DCB6A /* PBXTargetDependency */,
+				A0F6191317E93E2B00D7B9D6 /* PBXTargetDependency */,
+				A0F6190E17E93DAD00D7B9D6 /* PBXTargetDependency */,
+				A0F618FF17E93D5700D7B9D6 /* PBXTargetDependency */,
 			);
-			name = "CARRDM: OS X System";
+			name = "carrdm: OS X System";
 			productName = "CARRDM: OS X System";
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		A0C06CC817D9A98C000DCB6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C06CC717D9A98C000DCB6A /* Foundation.framework */; };
-		A0C06CF017D9A9C4000DCB6A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C06C8317D9352A000DCB6A /* Cocoa.framework */; };
-		A0C06CF617D9A9C4000DCB6A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0C06CF417D9A9C4000DCB6A /* InfoPlist.strings */; };
-		A0C06D0017D9A9C4000DCB6A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C06C9817D9352A000DCB6A /* XCTest.framework */; };
-		A0C06D0117D9A9C4000DCB6A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C06C8317D9352A000DCB6A /* Cocoa.framework */; };
-		A0C06D0417D9A9C4000DCB6A /* CARRDM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C06CEF17D9A9C4000DCB6A /* CARRDM.framework */; };
-		A0C06D0A17D9A9C4000DCB6A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0C06D0817D9A9C4000DCB6A /* InfoPlist.strings */; };
-		A0C06D0C17D9A9C4000DCB6A /* CARRDMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D0B17D9A9C4000DCB6A /* CARRDMTests.m */; };
-		A0C06D1E17D9AB83000DCB6A /* libcarrdm-array.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D1C17D9AB83000DCB6A /* libcarrdm-array.c */; };
-		A0C06D1F17D9AB83000DCB6A /* libcarrdm-array.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D1C17D9AB83000DCB6A /* libcarrdm-array.c */; };
-		A0C06D2117D9ACF8000DCB6A /* libcarrdm-base.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06C7917D9343B000DCB6A /* libcarrdm-base.c */; };
-		A0C06D2217D9ACF9000DCB6A /* libcarrdm-base.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06C7917D9343B000DCB6A /* libcarrdm-base.c */; };
-		A0C06D2417D9ACFE000DCB6A /* libcarrdm-lock.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06CB317D95079000DCB6A /* libcarrdm-lock.c */; };
-		A0C06D2517D9ACFE000DCB6A /* libcarrdm-lock.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06CB317D95079000DCB6A /* libcarrdm-lock.c */; };
-		A0C06D2617D9AD03000DCB6A /* libcarrdm-core.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06CAF17D94D8A000DCB6A /* libcarrdm-core.c */; };
-		A0C06D2717D9AD04000DCB6A /* libcarrdm-core.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06CAF17D94D8A000DCB6A /* libcarrdm-core.c */; };
-		A0C06D2817D9AD16000DCB6A /* carrdm.h in Headers */ = {isa = PBXBuildFile; fileRef = A0C06C6D17D93142000DCB6A /* carrdm.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A0C06D3A17DB7E49000DCB6A /* CARRDM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C06CEF17D9A9C4000DCB6A /* CARRDM.framework */; };
 		A0C06D3B17DB7E51000DCB6A /* test-array01.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D2A17DB7914000DCB6A /* test-array01.c */; };
-		A0C06D3E17DB9135000DCB6A /* libcarrdm-data.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D3C17DB9135000DCB6A /* libcarrdm-data.c */; };
-		A0C06D3F17DB9135000DCB6A /* libcarrdm-data.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D3C17DB9135000DCB6A /* libcarrdm-data.c */; };
-		A0C06D4017DB9135000DCB6A /* libcarrdm-data.h in Headers */ = {isa = PBXBuildFile; fileRef = A0C06D3D17DB9135000DCB6A /* libcarrdm-data.h */; };
-		A0C06D5817E0E39E000DCB6A /* carrdm_inline.h in Headers */ = {isa = PBXBuildFile; fileRef = A0C06D5717E0E39E000DCB6A /* carrdm_inline.h */; };
+		A0F618D817E93D0500D7B9D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C06CC717D9A98C000DCB6A /* Foundation.framework */; };
+		A0F618F917E93D4B00D7B9D6 /* libcarrdm-array.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D1C17D9AB83000DCB6A /* libcarrdm-array.c */; };
+		A0F618FA17E93D4B00D7B9D6 /* libcarrdm-base.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06C7917D9343B000DCB6A /* libcarrdm-base.c */; };
+		A0F618FB17E93D4B00D7B9D6 /* libcarrdm-core.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06CAF17D94D8A000DCB6A /* libcarrdm-core.c */; };
+		A0F618FC17E93D4B00D7B9D6 /* libcarrdm-data.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D3C17DB9135000DCB6A /* libcarrdm-data.c */; };
+		A0F618FD17E93D4B00D7B9D6 /* libcarrdm-lock.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06CB317D95079000DCB6A /* libcarrdm-lock.c */; };
+		A0F6190817E93DA300D7B9D6 /* libcarrdm-array.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D1C17D9AB83000DCB6A /* libcarrdm-array.c */; };
+		A0F6190917E93DA300D7B9D6 /* libcarrdm-base.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06C7917D9343B000DCB6A /* libcarrdm-base.c */; };
+		A0F6190A17E93DA300D7B9D6 /* libcarrdm-core.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06CAF17D94D8A000DCB6A /* libcarrdm-core.c */; };
+		A0F6190B17E93DA300D7B9D6 /* libcarrdm-data.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D3C17DB9135000DCB6A /* libcarrdm-data.c */; };
+		A0F6190C17E93DA300D7B9D6 /* libcarrdm-lock.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06CB317D95079000DCB6A /* libcarrdm-lock.c */; };
+		A0F6191117E93DF300D7B9D6 /* libcarrdm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F6190417E93D9000D7B9D6 /* libcarrdm.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,46 +46,37 @@
 			remoteGlobalIDString = A01156E9175B0118008E66FA;
 			remoteInfo = bindle;
 		};
-		A0C06D0217D9A9C4000DCB6A /* PBXContainerItemProxy */ = {
+		A0F618FE17E93D5700D7B9D6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A0C06C5117D80B04000DCB6A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A0C06CEE17D9A9C4000DCB6A;
-			remoteInfo = CARRDM;
+			remoteGlobalIDString = A0F618D617E93D0500D7B9D6;
+			remoteInfo = "carrdm-ios";
 		};
-		A0C06D1817D9AAC3000DCB6A /* PBXContainerItemProxy */ = {
+		A0F6190D17E93DAD00D7B9D6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A0C06C5117D80B04000DCB6A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A0C06CC517D9A98C000DCB6A;
-			remoteInfo = carrdm;
+			remoteGlobalIDString = A0F6190317E93D9000D7B9D6;
+			remoteInfo = "carrdm-osx";
 		};
-		A0C06D1A17D9AAC3000DCB6A /* PBXContainerItemProxy */ = {
+		A0F6190F17E93DEB00D7B9D6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A0C06C5117D80B04000DCB6A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A0C06CEE17D9A9C4000DCB6A;
-			remoteInfo = CARRDM;
+			remoteGlobalIDString = A0F6190317E93D9000D7B9D6;
+			remoteInfo = "carrdm-osx";
 		};
-		A0C06D3817DB7E44000DCB6A /* PBXContainerItemProxy */ = {
+		A0F6191217E93E2B00D7B9D6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A0C06C5117D80B04000DCB6A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A0C06CEE17D9A9C4000DCB6A;
-			remoteInfo = CARRDM;
+			remoteGlobalIDString = A0C06D2E17DB7E30000DCB6A;
+			remoteInfo = "test-array01";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A0C06CC417D9A98C000DCB6A /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A0C06D2D17DB7E30000DCB6A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -103,6 +85,15 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		A0F618D517E93D0500D7B9D6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -129,17 +120,11 @@
 		A0C06CB317D95079000DCB6A /* libcarrdm-lock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "libcarrdm-lock.c"; sourceTree = "<group>"; };
 		A0C06CB417D95079000DCB6A /* libcarrdm-lock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "libcarrdm-lock.h"; sourceTree = "<group>"; };
 		A0C06CBB17D961FE000DCB6A /* libcarrdm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libcarrdm.h; sourceTree = "<group>"; };
-		A0C06CC617D9A98C000DCB6A /* libcarrdm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libcarrdm.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C06CC717D9A98C000DCB6A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A0C06CD717D9A98D000DCB6A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		A0C06CEF17D9A9C4000DCB6A /* CARRDM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CARRDM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C06CF317D9A9C4000DCB6A /* CARRDM-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CARRDM-Info.plist"; sourceTree = "<group>"; };
 		A0C06CF517D9A9C4000DCB6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0C06CF717D9A9C4000DCB6A /* CARRDM-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CARRDM-Prefix.pch"; sourceTree = "<group>"; };
-		A0C06CFF17D9A9C4000DCB6A /* CARRDMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CARRDMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0C06D0717D9A9C4000DCB6A /* CARRDMTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CARRDMTests-Info.plist"; sourceTree = "<group>"; };
-		A0C06D0917D9A9C4000DCB6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A0C06D0B17D9A9C4000DCB6A /* CARRDMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CARRDMTests.m; sourceTree = "<group>"; };
 		A0C06D1C17D9AB83000DCB6A /* libcarrdm-array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "libcarrdm-array.c"; sourceTree = "<group>"; };
 		A0C06D1D17D9AB83000DCB6A /* libcarrdm-array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "libcarrdm-array.h"; sourceTree = "<group>"; };
 		A0C06D2A17DB7914000DCB6A /* test-array01.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "test-array01.c"; sourceTree = "<group>"; };
@@ -147,40 +132,31 @@
 		A0C06D3C17DB9135000DCB6A /* libcarrdm-data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "libcarrdm-data.c"; sourceTree = "<group>"; };
 		A0C06D3D17DB9135000DCB6A /* libcarrdm-data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "libcarrdm-data.h"; sourceTree = "<group>"; };
 		A0C06D5717E0E39E000DCB6A /* carrdm_inline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carrdm_inline.h; sourceTree = "<group>"; };
+		A0F618D717E93D0500D7B9D6 /* libcarrdm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libcarrdm.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F6190417E93D9000D7B9D6 /* libcarrdm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libcarrdm.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A0C06CC317D9A98C000DCB6A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0C06CC817D9A98C000DCB6A /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0C06CEB17D9A9C4000DCB6A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0C06CF017D9A9C4000DCB6A /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0C06CFC17D9A9C4000DCB6A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0C06D0117D9A9C4000DCB6A /* Cocoa.framework in Frameworks */,
-				A0C06D0017D9A9C4000DCB6A /* XCTest.framework in Frameworks */,
-				A0C06D0417D9A9C4000DCB6A /* CARRDM.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A0C06D2C17DB7E30000DCB6A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0C06D3A17DB7E49000DCB6A /* CARRDM.framework in Frameworks */,
+				A0F6191117E93DF300D7B9D6 /* libcarrdm.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0F618D417E93D0500D7B9D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0F618D817E93D0500D7B9D6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0F6190117E93D9000D7B9D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +178,6 @@
 				A0C06C7117D93365000DCB6A /* lib */,
 				A0C06D2917DB78D3000DCB6A /* tests */,
 				A0C06CF117D9A9C4000DCB6A /* CARRDM */,
-				A0C06D0517D9A9C4000DCB6A /* CARRDMTests */,
 				A0C06C8217D9352A000DCB6A /* Frameworks */,
 				A0C06C8117D9352A000DCB6A /* Products */,
 			);
@@ -263,10 +238,9 @@
 		A0C06C8117D9352A000DCB6A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A0C06CC617D9A98C000DCB6A /* libcarrdm.a */,
-				A0C06CEF17D9A9C4000DCB6A /* CARRDM.framework */,
-				A0C06CFF17D9A9C4000DCB6A /* CARRDMTests.xctest */,
 				A0C06D2F17DB7E30000DCB6A /* test-array01 */,
+				A0F618D717E93D0500D7B9D6 /* libcarrdm.a */,
+				A0F6190417E93D9000D7B9D6 /* libcarrdm.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -312,24 +286,6 @@
 			path = support;
 			sourceTree = "<group>";
 		};
-		A0C06D0517D9A9C4000DCB6A /* CARRDMTests */ = {
-			isa = PBXGroup;
-			children = (
-				A0C06D0B17D9A9C4000DCB6A /* CARRDMTests.m */,
-				A0C06D0617D9A9C4000DCB6A /* Supporting Files */,
-			);
-			path = CARRDMTests;
-			sourceTree = "<group>";
-		};
-		A0C06D0617D9A9C4000DCB6A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A0C06D0717D9A9C4000DCB6A /* CARRDMTests-Info.plist */,
-				A0C06D0817D9A9C4000DCB6A /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		A0C06D1317D9A9DD000DCB6A /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,72 +306,16 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A0C06CEC17D9A9C4000DCB6A /* Headers */ = {
+		A0F6190217E93D9000D7B9D6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0C06D5817E0E39E000DCB6A /* carrdm_inline.h in Headers */,
-				A0C06D2817D9AD16000DCB6A /* carrdm.h in Headers */,
-				A0C06D4017DB9135000DCB6A /* libcarrdm-data.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A0C06CC517D9A98C000DCB6A /* carrdm */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A0C06CE417D9A98D000DCB6A /* Build configuration list for PBXNativeTarget "carrdm" */;
-			buildPhases = (
-				A0C06CC217D9A98C000DCB6A /* Sources */,
-				A0C06CC317D9A98C000DCB6A /* Frameworks */,
-				A0C06CC417D9A98C000DCB6A /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = carrdm;
-			productName = carrdm;
-			productReference = A0C06CC617D9A98C000DCB6A /* libcarrdm.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		A0C06CEE17D9A9C4000DCB6A /* CARRDM */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A0C06D0D17D9A9C4000DCB6A /* Build configuration list for PBXNativeTarget "CARRDM" */;
-			buildPhases = (
-				A0C06CEA17D9A9C4000DCB6A /* Sources */,
-				A0C06CEB17D9A9C4000DCB6A /* Frameworks */,
-				A0C06CEC17D9A9C4000DCB6A /* Headers */,
-				A0C06CED17D9A9C4000DCB6A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CARRDM;
-			productName = CARRDM;
-			productReference = A0C06CEF17D9A9C4000DCB6A /* CARRDM.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A0C06CFE17D9A9C4000DCB6A /* CARRDMTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A0C06D1017D9A9C4000DCB6A /* Build configuration list for PBXNativeTarget "CARRDMTests" */;
-			buildPhases = (
-				A0C06CFB17D9A9C4000DCB6A /* Sources */,
-				A0C06CFC17D9A9C4000DCB6A /* Frameworks */,
-				A0C06CFD17D9A9C4000DCB6A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A0C06D0317D9A9C4000DCB6A /* PBXTargetDependency */,
-			);
-			name = CARRDMTests;
-			productName = CARRDMTests;
-			productReference = A0C06CFF17D9A9C4000DCB6A /* CARRDMTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		A0C06D2E17DB7E30000DCB6A /* test-array01 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0C06D3517DB7E30000DCB6A /* Build configuration list for PBXNativeTarget "test-array01" */;
@@ -427,12 +327,46 @@
 			buildRules = (
 			);
 			dependencies = (
-				A0C06D3917DB7E44000DCB6A /* PBXTargetDependency */,
+				A0F6191017E93DEB00D7B9D6 /* PBXTargetDependency */,
 			);
 			name = "test-array01";
 			productName = "test-array01";
 			productReference = A0C06D2F17DB7E30000DCB6A /* test-array01 */;
 			productType = "com.apple.product-type.tool";
+		};
+		A0F618D617E93D0500D7B9D6 /* carrdm-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0F618F317E93D0600D7B9D6 /* Build configuration list for PBXNativeTarget "carrdm-ios" */;
+			buildPhases = (
+				A0F618D317E93D0500D7B9D6 /* Sources */,
+				A0F618D417E93D0500D7B9D6 /* Frameworks */,
+				A0F618D517E93D0500D7B9D6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "carrdm-ios";
+			productName = "carrdm-ios";
+			productReference = A0F618D717E93D0500D7B9D6 /* libcarrdm.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A0F6190317E93D9000D7B9D6 /* carrdm-osx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0F6190517E93D9000D7B9D6 /* Build configuration list for PBXNativeTarget "carrdm-osx" */;
+			buildPhases = (
+				A0F6190017E93D9000D7B9D6 /* Sources */,
+				A0F6190117E93D9000D7B9D6 /* Frameworks */,
+				A0F6190217E93D9000D7B9D6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "carrdm-osx";
+			productName = "carrdm-osx";
+			productReference = A0F6190417E93D9000D7B9D6 /* libcarrdm.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -441,11 +375,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
-				TargetAttributes = {
-					A0C06CFE17D9A9C4000DCB6A = {
-						TestTargetID = A0C06CEE17D9A9C4000DCB6A;
-					};
-				};
 			};
 			buildConfigurationList = A0C06C5417D80B04000DCB6A /* Build configuration list for PBXProject "carrdm" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -465,10 +394,9 @@
 			);
 			projectRoot = "";
 			targets = (
-				A0C06CC517D9A98C000DCB6A /* carrdm */,
-				A0C06CEE17D9A9C4000DCB6A /* CARRDM */,
-				A0C06CFE17D9A9C4000DCB6A /* CARRDMTests */,
-				A0C06D1417D9AAB9000DCB6A /* CARRDM: OS X System */,
+				A0F618D617E93D0500D7B9D6 /* carrdm-ios */,
+				A0F6190317E93D9000D7B9D6 /* carrdm-osx */,
+				A0C06D1417D9AAB9000DCB6A /* carrdm: OS X System */,
 				A0C06D2E17DB7E30000DCB6A /* test-array01 */,
 			);
 		};
@@ -484,58 +412,7 @@
 		};
 /* End PBXReferenceProxy section */
 
-/* Begin PBXResourcesBuildPhase section */
-		A0C06CED17D9A9C4000DCB6A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0C06CF617D9A9C4000DCB6A /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0C06CFD17D9A9C4000DCB6A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0C06D0A17D9A9C4000DCB6A /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		A0C06CC217D9A98C000DCB6A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0C06D1E17D9AB83000DCB6A /* libcarrdm-array.c in Sources */,
-				A0C06D2217D9ACF9000DCB6A /* libcarrdm-base.c in Sources */,
-				A0C06D3E17DB9135000DCB6A /* libcarrdm-data.c in Sources */,
-				A0C06D2517D9ACFE000DCB6A /* libcarrdm-lock.c in Sources */,
-				A0C06D2717D9AD04000DCB6A /* libcarrdm-core.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0C06CEA17D9A9C4000DCB6A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0C06D1F17D9AB83000DCB6A /* libcarrdm-array.c in Sources */,
-				A0C06D2117D9ACF8000DCB6A /* libcarrdm-base.c in Sources */,
-				A0C06D3F17DB9135000DCB6A /* libcarrdm-data.c in Sources */,
-				A0C06D2417D9ACFE000DCB6A /* libcarrdm-lock.c in Sources */,
-				A0C06D2617D9AD03000DCB6A /* libcarrdm-core.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0C06CFB17D9A9C4000DCB6A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0C06D0C17D9A9C4000DCB6A /* CARRDMTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A0C06D2B17DB7E30000DCB6A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -544,28 +421,52 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A0F618D317E93D0500D7B9D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0F618F917E93D4B00D7B9D6 /* libcarrdm-array.c in Sources */,
+				A0F618FA17E93D4B00D7B9D6 /* libcarrdm-base.c in Sources */,
+				A0F618FB17E93D4B00D7B9D6 /* libcarrdm-core.c in Sources */,
+				A0F618FC17E93D4B00D7B9D6 /* libcarrdm-data.c in Sources */,
+				A0F618FD17E93D4B00D7B9D6 /* libcarrdm-lock.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0F6190017E93D9000D7B9D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0F6190817E93DA300D7B9D6 /* libcarrdm-array.c in Sources */,
+				A0F6190917E93DA300D7B9D6 /* libcarrdm-base.c in Sources */,
+				A0F6190A17E93DA300D7B9D6 /* libcarrdm-core.c in Sources */,
+				A0F6190B17E93DA300D7B9D6 /* libcarrdm-data.c in Sources */,
+				A0F6190C17E93DA300D7B9D6 /* libcarrdm-lock.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A0C06D0317D9A9C4000DCB6A /* PBXTargetDependency */ = {
+		A0F618FF17E93D5700D7B9D6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A0C06CEE17D9A9C4000DCB6A /* CARRDM */;
-			targetProxy = A0C06D0217D9A9C4000DCB6A /* PBXContainerItemProxy */;
+			target = A0F618D617E93D0500D7B9D6 /* carrdm-ios */;
+			targetProxy = A0F618FE17E93D5700D7B9D6 /* PBXContainerItemProxy */;
 		};
-		A0C06D1917D9AAC3000DCB6A /* PBXTargetDependency */ = {
+		A0F6190E17E93DAD00D7B9D6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A0C06CC517D9A98C000DCB6A /* carrdm */;
-			targetProxy = A0C06D1817D9AAC3000DCB6A /* PBXContainerItemProxy */;
+			target = A0F6190317E93D9000D7B9D6 /* carrdm-osx */;
+			targetProxy = A0F6190D17E93DAD00D7B9D6 /* PBXContainerItemProxy */;
 		};
-		A0C06D1B17D9AAC3000DCB6A /* PBXTargetDependency */ = {
+		A0F6191017E93DEB00D7B9D6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A0C06CEE17D9A9C4000DCB6A /* CARRDM */;
-			targetProxy = A0C06D1A17D9AAC3000DCB6A /* PBXContainerItemProxy */;
+			target = A0F6190317E93D9000D7B9D6 /* carrdm-osx */;
+			targetProxy = A0F6190F17E93DEB00D7B9D6 /* PBXContainerItemProxy */;
 		};
-		A0C06D3917DB7E44000DCB6A /* PBXTargetDependency */ = {
+		A0F6191317E93E2B00D7B9D6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A0C06CEE17D9A9C4000DCB6A /* CARRDM */;
-			targetProxy = A0C06D3817DB7E44000DCB6A /* PBXContainerItemProxy */;
+			target = A0C06D2E17DB7E30000DCB6A /* test-array01 */;
+			targetProxy = A0F6191217E93E2B00D7B9D6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -574,14 +475,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				A0C06CF517D9A9C4000DCB6A /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		A0C06D0817D9A9C4000DCB6A /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A0C06D0917D9A9C4000DCB6A /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -600,274 +493,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = include;
-			};
-			name = Release;
-		};
-		A0C06CE517D9A98D000DCB6A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/carrdm.dst;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CARRDM/other/CARRDM-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		A0C06CE617D9A98D000DCB6A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/carrdm.dst;
-				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CARRDM/other/CARRDM-Prefix.pch";
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		A0C06D0E17D9A9C4000DCB6A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CARRDM/other/CARRDM-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "CARRDM/support/CARRDM-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Debug;
-		};
-		A0C06D0F17D9A9C4000DCB6A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_VERSION = A;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CARRDM/other/CARRDM-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "CARRDM/support/CARRDM-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Release;
-		};
-		A0C06D1117D9A9C4000DCB6A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CARRDM.framework/Versions/A/CARRDM";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CARRDM/CARRDM-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "CARRDMTests/CARRDMTests-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		A0C06D1217D9A9C4000DCB6A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CARRDM.framework/Versions/A/CARRDM";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CARRDM/CARRDM-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "CARRDMTests/CARRDMTests-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -957,6 +582,166 @@
 			};
 			name = Release;
 		};
+		A0F618F417E93D0600D7B9D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/carrdm_ios.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CARRDM/other/CARRDM-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = carrdm;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A0F618F517E93D0600D7B9D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/carrdm_ios.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CARRDM/other/CARRDM-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = carrdm;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A0F6190617E93D9000D7B9D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = carrdm;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A0F6190717E93D9000D7B9D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = carrdm;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -969,34 +754,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0C06CE417D9A98D000DCB6A /* Build configuration list for PBXNativeTarget "carrdm" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A0C06CE517D9A98D000DCB6A /* Debug */,
-				A0C06CE617D9A98D000DCB6A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A0C06D0D17D9A9C4000DCB6A /* Build configuration list for PBXNativeTarget "CARRDM" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A0C06D0E17D9A9C4000DCB6A /* Debug */,
-				A0C06D0F17D9A9C4000DCB6A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A0C06D1017D9A9C4000DCB6A /* Build configuration list for PBXNativeTarget "CARRDMTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A0C06D1117D9A9C4000DCB6A /* Debug */,
-				A0C06D1217D9A9C4000DCB6A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A0C06D1517D9AAB9000DCB6A /* Build configuration list for PBXAggregateTarget "CARRDM: OS X System" */ = {
+		A0C06D1517D9AAB9000DCB6A /* Build configuration list for PBXAggregateTarget "carrdm: OS X System" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A0C06D1617D9AAB9000DCB6A /* Debug */,
@@ -1013,6 +771,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A0F618F317E93D0600D7B9D6 /* Build configuration list for PBXNativeTarget "carrdm-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0F618F417E93D0600D7B9D6 /* Debug */,
+				A0F618F517E93D0600D7B9D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A0F6190517E93D9000D7B9D6 /* Build configuration list for PBXNativeTarget "carrdm-osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0F6190617E93D9000D7B9D6 /* Debug */,
+				A0F6190717E93D9000D7B9D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
