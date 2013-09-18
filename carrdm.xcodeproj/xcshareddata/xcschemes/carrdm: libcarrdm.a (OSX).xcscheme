@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A0F6192817E9444900D7B9D6"
-               BuildableName = "libcarrdm.dylib"
+               BlueprintIdentifier = "A0F6190317E93D9000D7B9D6"
+               BuildableName = "libcarrdm.a"
                BlueprintName = "carrdm-osx"
                ReferencedContainer = "container:carrdm.xcodeproj">
             </BuildableReference>
