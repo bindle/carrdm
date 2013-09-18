@@ -259,7 +259,7 @@ _CARRDM_I const carrdm_reclock  * carrdm_reclock_ccast(const void * objref)
 _CARRDM_I void carrdm_release(void * ptr)
 {
    carrdm_base * objref = (carrdm_base *) ptr;
-   size_t count;
+   uint64_t count;
    assert(carrdm_is_valid_object(ptr) == CARRDM_TRUE);
    if ((count = __sync_fetch_and_sub(&objref->retain_count, 1)) <= 1)
    {
