@@ -13,8 +13,8 @@
 			buildPhases = (
 			);
 			dependencies = (
+				A0F6192E17E9447800D7B9D6 /* PBXTargetDependency */,
 				A0F6191317E93E2B00D7B9D6 /* PBXTargetDependency */,
-				A0F6190E17E93DAD00D7B9D6 /* PBXTargetDependency */,
 				A0F618FF17E93D5700D7B9D6 /* PBXTargetDependency */,
 			);
 			name = "carrdm: OS X System";
@@ -30,12 +30,12 @@
 		A0F618FB17E93D4B00D7B9D6 /* libcarrdm-core.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06CAF17D94D8A000DCB6A /* libcarrdm-core.c */; };
 		A0F618FC17E93D4B00D7B9D6 /* libcarrdm-data.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D3C17DB9135000DCB6A /* libcarrdm-data.c */; };
 		A0F618FD17E93D4B00D7B9D6 /* libcarrdm-lock.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06CB317D95079000DCB6A /* libcarrdm-lock.c */; };
-		A0F6190817E93DA300D7B9D6 /* libcarrdm-array.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D1C17D9AB83000DCB6A /* libcarrdm-array.c */; };
-		A0F6190917E93DA300D7B9D6 /* libcarrdm-base.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06C7917D9343B000DCB6A /* libcarrdm-base.c */; };
-		A0F6190A17E93DA300D7B9D6 /* libcarrdm-core.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06CAF17D94D8A000DCB6A /* libcarrdm-core.c */; };
-		A0F6190B17E93DA300D7B9D6 /* libcarrdm-data.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D3C17DB9135000DCB6A /* libcarrdm-data.c */; };
-		A0F6190C17E93DA300D7B9D6 /* libcarrdm-lock.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06CB317D95079000DCB6A /* libcarrdm-lock.c */; };
-		A0F6191117E93DF300D7B9D6 /* libcarrdm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F6190417E93D9000D7B9D6 /* libcarrdm.a */; };
+		A0F6193417E9452200D7B9D6 /* libcarrdm-array.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D1C17D9AB83000DCB6A /* libcarrdm-array.c */; };
+		A0F6193517E9452200D7B9D6 /* libcarrdm-base.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06C7917D9343B000DCB6A /* libcarrdm-base.c */; };
+		A0F6193617E9452200D7B9D6 /* libcarrdm-core.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06CAF17D94D8A000DCB6A /* libcarrdm-core.c */; };
+		A0F6193717E9452200D7B9D6 /* libcarrdm-data.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06D3C17DB9135000DCB6A /* libcarrdm-data.c */; };
+		A0F6193817E9452200D7B9D6 /* libcarrdm-lock.c in Sources */ = {isa = PBXBuildFile; fileRef = A0C06CB317D95079000DCB6A /* libcarrdm-lock.c */; };
+		A0F6193B17E9454B00D7B9D6 /* libcarrdm.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F6192917E9444900D7B9D6 /* libcarrdm.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,26 +53,26 @@
 			remoteGlobalIDString = A0F618D617E93D0500D7B9D6;
 			remoteInfo = "carrdm-ios";
 		};
-		A0F6190D17E93DAD00D7B9D6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A0C06C5117D80B04000DCB6A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A0F6190317E93D9000D7B9D6;
-			remoteInfo = "carrdm-osx";
-		};
-		A0F6190F17E93DEB00D7B9D6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A0C06C5117D80B04000DCB6A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A0F6190317E93D9000D7B9D6;
-			remoteInfo = "carrdm-osx";
-		};
 		A0F6191217E93E2B00D7B9D6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A0C06C5117D80B04000DCB6A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A0C06D2E17DB7E30000DCB6A;
 			remoteInfo = "test-array01";
+		};
+		A0F6192D17E9447800D7B9D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0C06C5117D80B04000DCB6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0F6192817E9444900D7B9D6;
+			remoteInfo = "carrdm-osx";
+		};
+		A0F6193917E9454400D7B9D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0C06C5117D80B04000DCB6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0F6192817E9444900D7B9D6;
+			remoteInfo = "carrdm-osx";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -133,7 +133,7 @@
 		A0C06D3D17DB9135000DCB6A /* libcarrdm-data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "libcarrdm-data.h"; sourceTree = "<group>"; };
 		A0C06D5717E0E39E000DCB6A /* carrdm_inline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carrdm_inline.h; sourceTree = "<group>"; };
 		A0F618D717E93D0500D7B9D6 /* libcarrdm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libcarrdm.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0F6190417E93D9000D7B9D6 /* libcarrdm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libcarrdm.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F6192917E9444900D7B9D6 /* libcarrdm.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libcarrdm.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0F6191117E93DF300D7B9D6 /* libcarrdm.a in Frameworks */,
+				A0F6193B17E9454B00D7B9D6 /* libcarrdm.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +153,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0F6190117E93D9000D7B9D6 /* Frameworks */ = {
+		A0F6192617E9444900D7B9D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -240,7 +240,7 @@
 			children = (
 				A0C06D2F17DB7E30000DCB6A /* test-array01 */,
 				A0F618D717E93D0500D7B9D6 /* libcarrdm.a */,
-				A0F6190417E93D9000D7B9D6 /* libcarrdm.a */,
+				A0F6192917E9444900D7B9D6 /* libcarrdm.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -306,7 +306,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A0F6190217E93D9000D7B9D6 /* Headers */ = {
+		A0F6192717E9444900D7B9D6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -327,7 +327,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				A0F6191017E93DEB00D7B9D6 /* PBXTargetDependency */,
+				A0F6193A17E9454400D7B9D6 /* PBXTargetDependency */,
 			);
 			name = "test-array01";
 			productName = "test-array01";
@@ -351,13 +351,13 @@
 			productReference = A0F618D717E93D0500D7B9D6 /* libcarrdm.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		A0F6190317E93D9000D7B9D6 /* carrdm-osx */ = {
+		A0F6192817E9444900D7B9D6 /* carrdm-osx */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0F6190517E93D9000D7B9D6 /* Build configuration list for PBXNativeTarget "carrdm-osx" */;
+			buildConfigurationList = A0F6192A17E9444900D7B9D6 /* Build configuration list for PBXNativeTarget "carrdm-osx" */;
 			buildPhases = (
-				A0F6190017E93D9000D7B9D6 /* Sources */,
-				A0F6190117E93D9000D7B9D6 /* Frameworks */,
-				A0F6190217E93D9000D7B9D6 /* Headers */,
+				A0F6192517E9444900D7B9D6 /* Sources */,
+				A0F6192617E9444900D7B9D6 /* Frameworks */,
+				A0F6192717E9444900D7B9D6 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -365,8 +365,8 @@
 			);
 			name = "carrdm-osx";
 			productName = "carrdm-osx";
-			productReference = A0F6190417E93D9000D7B9D6 /* libcarrdm.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = A0F6192917E9444900D7B9D6 /* libcarrdm.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
 
@@ -395,7 +395,7 @@
 			projectRoot = "";
 			targets = (
 				A0F618D617E93D0500D7B9D6 /* carrdm-ios */,
-				A0F6190317E93D9000D7B9D6 /* carrdm-osx */,
+				A0F6192817E9444900D7B9D6 /* carrdm-osx */,
 				A0C06D1417D9AAB9000DCB6A /* carrdm: OS X System */,
 				A0C06D2E17DB7E30000DCB6A /* test-array01 */,
 			);
@@ -433,15 +433,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0F6190017E93D9000D7B9D6 /* Sources */ = {
+		A0F6192517E9444900D7B9D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0F6190817E93DA300D7B9D6 /* libcarrdm-array.c in Sources */,
-				A0F6190917E93DA300D7B9D6 /* libcarrdm-base.c in Sources */,
-				A0F6190A17E93DA300D7B9D6 /* libcarrdm-core.c in Sources */,
-				A0F6190B17E93DA300D7B9D6 /* libcarrdm-data.c in Sources */,
-				A0F6190C17E93DA300D7B9D6 /* libcarrdm-lock.c in Sources */,
+				A0F6193417E9452200D7B9D6 /* libcarrdm-array.c in Sources */,
+				A0F6193517E9452200D7B9D6 /* libcarrdm-base.c in Sources */,
+				A0F6193617E9452200D7B9D6 /* libcarrdm-core.c in Sources */,
+				A0F6193717E9452200D7B9D6 /* libcarrdm-data.c in Sources */,
+				A0F6193817E9452200D7B9D6 /* libcarrdm-lock.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,20 +453,20 @@
 			target = A0F618D617E93D0500D7B9D6 /* carrdm-ios */;
 			targetProxy = A0F618FE17E93D5700D7B9D6 /* PBXContainerItemProxy */;
 		};
-		A0F6190E17E93DAD00D7B9D6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A0F6190317E93D9000D7B9D6 /* carrdm-osx */;
-			targetProxy = A0F6190D17E93DAD00D7B9D6 /* PBXContainerItemProxy */;
-		};
-		A0F6191017E93DEB00D7B9D6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A0F6190317E93D9000D7B9D6 /* carrdm-osx */;
-			targetProxy = A0F6190F17E93DEB00D7B9D6 /* PBXContainerItemProxy */;
-		};
 		A0F6191317E93E2B00D7B9D6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A0C06D2E17DB7E30000DCB6A /* test-array01 */;
 			targetProxy = A0F6191217E93E2B00D7B9D6 /* PBXContainerItemProxy */;
+		};
+		A0F6192E17E9447800D7B9D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0F6192817E9444900D7B9D6 /* carrdm-osx */;
+			targetProxy = A0F6192D17E9447800D7B9D6 /* PBXContainerItemProxy */;
+		};
+		A0F6193A17E9454400D7B9D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0F6192817E9444900D7B9D6 /* carrdm-osx */;
+			targetProxy = A0F6193917E9454400D7B9D6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -668,7 +668,7 @@
 			};
 			name = Release;
 		};
-		A0F6190617E93D9000D7B9D6 /* Debug */ = {
+		A0F6192B17E9444900D7B9D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -708,7 +708,7 @@
 			};
 			name = Debug;
 		};
-		A0F6190717E93D9000D7B9D6 /* Release */ = {
+		A0F6192C17E9444900D7B9D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -779,12 +779,13 @@
 				A0F618F517E93D0600D7B9D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		A0F6190517E93D9000D7B9D6 /* Build configuration list for PBXNativeTarget "carrdm-osx" */ = {
+		A0F6192A17E9444900D7B9D6 /* Build configuration list for PBXNativeTarget "carrdm-osx" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A0F6190617E93D9000D7B9D6 /* Debug */,
-				A0F6190717E93D9000D7B9D6 /* Release */,
+				A0F6192B17E9444900D7B9D6 /* Debug */,
+				A0F6192C17E9444900D7B9D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
