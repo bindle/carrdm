@@ -76,7 +76,7 @@ extern inline uint64_t       carrdm_retain_count(const void * objref);
 //  Functions  //
 //             //
 /////////////////
-#ifdef APUTILS_PMARK
+#ifdef CARRDM_PMARK
 #pragma mark - Functions
 #endif
 

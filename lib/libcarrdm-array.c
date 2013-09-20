@@ -92,7 +92,7 @@ void carrdm_array_destroy(void * ptr);
 //  Variables  //
 //             //
 /////////////////
-#ifdef APUTILS_PMARK
+#ifdef CARRDM_PMARK
 #pragma mark - Variables
 #endif
 
@@ -135,7 +135,7 @@ extern inline const carrdm_array * carrdm_array_ccast(const void * objref);
 //  Functions  //
 //             //
 /////////////////
-#ifdef APUTILS_PMARK
+#ifdef CARRDM_PMARK
 #pragma mark - Functions
 #endif
 

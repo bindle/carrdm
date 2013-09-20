@@ -66,7 +66,7 @@ int carrdm_base_getter(const void * objref, uint64_t valid, void * outval);
 //  Variables  //
 //             //
 /////////////////
-#ifdef APUTILS_PMARK
+#ifdef CARRDM_PMARK
 #pragma mark - Variables
 #endif
 
@@ -109,7 +109,7 @@ extern inline const carrdm_base * carrdm_base_ccast(const void * objref);
 //  Functions  //
 //             //
 /////////////////
-#ifdef APUTILS_PMARK
+#ifdef CARRDM_PMARK
 #pragma mark - Functions
 #endif
 

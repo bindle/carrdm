@@ -134,7 +134,7 @@ void   carrdm_spin_unlock(carrdm_spinlock_t * spinlock);
 //  Variables  //
 //             //
 /////////////////
-#ifdef APUTILS_PMARK
+#ifdef CARRDM_PMARK
 #pragma mark - Variables
 #endif
 
@@ -220,7 +220,7 @@ extern inline const carrdm_reclock  * carrdm_reclock_ccast(const void * objref);
 //  Functions  //
 //             //
 /////////////////
-#ifdef APUTILS_PMARK
+#ifdef CARRDM_PMARK
 #pragma mark - Baselock Objref Functions
 #endif
 
@@ -267,7 +267,7 @@ carrdm_baselock * carrdm_baselock_initialize(void * ptr)
 //  Functions  //
 //             //
 /////////////////
-#ifdef APUTILS_PMARK
+#ifdef CARRDM_PMARK
 #pragma mark - Core Lock Functions
 #endif
 
@@ -377,7 +377,7 @@ int carrdm_unlock(void * ptr)
 //  Functions  //
 //             //
 /////////////////
-#ifdef APUTILS_PMARK
+#ifdef CARRDM_PMARK
 #pragma mark - Reallock Objref Functions
 #endif
 
@@ -420,7 +420,7 @@ carrdm_reallock * carrdm_reallock_initialize(void * ptr)
 //  Functions  //
 //             //
 /////////////////
-#ifdef APUTILS_PMARK
+#ifdef CARRDM_PMARK
 #pragma mark - Reclock Objref Functions
 #endif
 
@@ -450,7 +450,7 @@ carrdm_reclock * carrdm_reclock_initialize(void * ptr)
 //  Low-level Locks  //
 //                   //
 ///////////////////////
-#ifdef APUTILS_PMARK
+#ifdef CARRDM_PMARK
 #pragma mark - Low-level Locks
 #endif
 

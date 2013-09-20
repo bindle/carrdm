@@ -71,7 +71,7 @@ int  carrdm_data_setter(void * ptr, uint64_t valid, const void * inval);
 //  Variables  //
 //             //
 /////////////////
-#ifdef APUTILS_PMARK
+#ifdef CARRDM_PMARK
 #pragma mark - Variables
 #endif
 
@@ -114,7 +114,7 @@ extern inline const carrdm_data * carrdm_data_ccast(const void * objref);
 //  Functions  //
 //             //
 /////////////////
-#ifdef APUTILS_PMARK
+#ifdef CARRDM_PMARK
 #pragma mark - Functions
 #endif
 
