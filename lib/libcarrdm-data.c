@@ -60,6 +60,7 @@
 #pragma mark - Prototypes
 #endif
 
+int  carrdm_data_copy(void * dst, const void * src, int deep);
 void carrdm_data_destroy(void * ptr);
 int  carrdm_data_getter(const void * ptr, uint64_t valid, void * outval);
 int  carrdm_data_setter(void * ptr, uint64_t valid, const void * inval);
@@ -90,7 +91,8 @@ carrdm_definition carrdm_data_def =
    carrdm_data_destroy,       // destroy
    carrdm_data_getter,        // getter
    carrdm_data_setter,        // setter
-   NULL                       // is_object
+   NULL,                      // is_object
+   carrdm_data_copy           // copy
 };
 
 
@@ -115,6 +117,23 @@ extern inline const carrdm_data * carrdm_data_ccast(const void * objref);
 #ifdef APUTILS_PMARK
 #pragma mark - Functions
 #endif
+
+
+int carrdm_data_copy(void * dst, const void * src, int __unused deep)
+{
+   carrdm_data       * dstref = dst;
+   const carrdm_data * srcref = src;
+
+   assert(carrdm_is_def(dst, &carrdm_data_def) == CARRDM_TRUE);
+   assert(carrdm_is_def(src, &carrdm_data_def) == CARRDM_TRUE);
+
+   if ((dstref->data = malloc(srcref->size)) == NULL)
+      return(CARRDM_NO_MEMORY);
+   memcpy(dstref->data, srcref->data, srcref->size);
+   dstref->size = srcref->size;
+
+   return(CARRDM_SUCCESS);
+}
 
 
 void carrdm_data_destroy(void * ptr)

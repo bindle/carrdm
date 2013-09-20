@@ -154,7 +154,8 @@ carrdm_definition carrdm_baselock_def =
    carrdm_baselock_destroy,      // destroy
    NULL,                         // getter
    NULL,                         // setter
-   NULL                          // is_object
+   NULL,                         // is_object
+   NULL                          // duplicate
 };
 
 
@@ -174,7 +175,8 @@ carrdm_definition carrdm_reallock_def =
    carrdm_reallock_destroy,      // destroy
    NULL,                         // getter
    NULL,                         // setter
-   NULL                          // is_object
+   NULL,                         // is_object
+   NULL                          // duplicate
 };
 
 
@@ -194,7 +196,8 @@ carrdm_definition carrdm_reclock_def =
    NULL,                         // destroy
    NULL,                         // getter
    NULL,                         // setter
-   NULL                          // is_object
+   NULL,                         // is_object
+   NULL                          // duplicate
 };
 
 

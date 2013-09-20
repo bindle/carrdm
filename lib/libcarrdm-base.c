@@ -86,7 +86,8 @@ carrdm_definition carrdm_base_def =
    NULL,                      // destroy
    carrdm_base_getter,        // getter
    NULL,                      // setter
-   NULL                       // is_object
+   NULL,                      // is_object
+   NULL                       // duplicate
 };
 
 

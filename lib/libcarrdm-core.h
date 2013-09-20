@@ -58,5 +58,7 @@
 #pragma mark - Prototypes
 #endif
 
+void * carrdm_duplicate(const void * objref, int deep);
+
 
 #endif /* end of header */

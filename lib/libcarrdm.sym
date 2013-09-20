@@ -66,6 +66,8 @@ carrdm_baselock_initialize
 carrdm_alloc
 carrdm_cast
 carrdm_ccast
+carrdm_copy
+carrdm_deep_copy
 carrdm_destroy
 carrdm_get_value
 carrdm_is_def

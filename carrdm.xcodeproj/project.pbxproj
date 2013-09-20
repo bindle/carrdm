@@ -779,6 +779,7 @@
 				A0F618F517E93D0600D7B9D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0F6190517E93D9000D7B9D6 /* Build configuration list for PBXNativeTarget "carrdm-osx" */ = {
 			isa = XCConfigurationList;
@@ -787,6 +788,7 @@
 				A0F6190717E93D9000D7B9D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

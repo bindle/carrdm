@@ -50,6 +50,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "libcarrdm-core.h"
+
 
 //////////////////
 //              //
@@ -81,6 +83,7 @@ struct carrdm_array_struct
 #pragma mark - Prototypes
 #endif
 
+int  carrdm_array_copy(void * dst, const void * src, int deep);
 void carrdm_array_destroy(void * ptr);
 
 
@@ -109,7 +112,8 @@ carrdm_definition carrdm_array_def =
    carrdm_array_destroy,      // destroy
    NULL,                      // getter
    NULL,                      // setter
-   NULL                       // is_object
+   NULL,                      // is_object
+   NULL                       // duplicate
 };
 
 
@@ -134,6 +138,35 @@ extern inline const carrdm_array * carrdm_array_ccast(const void * objref);
 #ifdef APUTILS_PMARK
 #pragma mark - Functions
 #endif
+
+int carrdm_array_copy(void * dst, const void * src, int deep)
+{
+   carrdm_array       * dstref = dst;
+   const carrdm_array * srcref = src;
+   carrdm_base        * objref;
+   size_t               pos;
+   int                  err;
+
+   assert(carrdm_is_def(dst, &carrdm_array_def) == CARRDM_TRUE);
+   assert(carrdm_is_def(src, &carrdm_array_def) == CARRDM_TRUE);
+
+   for(pos = 0; pos < srcref->len; pos++)
+   {
+      if ((objref = carrdm_array_object(srcref, pos)) == NULL)
+         return(CARRDM_FAILED);
+      if (deep == CARRDM_TRUE)
+         if ((objref = carrdm_duplicate(objref, CARRDM_TRUE)) == NULL)
+            return(CARRDM_FAILED);
+      if ((err = carrdm_array_append(dstref, objref)) != CARRDM_SUCCESS)
+         return(err);
+   };
+
+   if (dstref->len != srcref->len)
+      return(CARRDM_FAILED);
+
+   return(CARRDM_SUCCESS);
+}
+
 
 int carrdm_array_add(carrdm_array * array, void * ptr, size_t idx)
 {

@@ -103,6 +103,20 @@ void * carrdm_alloc(void * mem, const carrdm_definition * def)
 }
 
 
+void * carrdm_copy(const void * objref)
+{
+   assert(carrdm_is_valid_object(objref) == CARRDM_TRUE);
+   return(carrdm_duplicate(objref, CARRDM_FALSE));
+}
+
+
+void * carrdm_deep_copy(const void * objref)
+{
+   assert(carrdm_is_valid_object(objref) == CARRDM_TRUE);
+   return(carrdm_duplicate(objref, CARRDM_TRUE));
+}
+
+
 void carrdm_destroy(void * mem)
 {
    carrdm_base             * objref = mem;
@@ -126,6 +140,45 @@ void carrdm_destroy(void * mem)
    free(objref);
 
    return;
+}
+
+
+void * carrdm_duplicate(const void * objref, int deep)
+{
+   const carrdm_base       * srcref = objref;
+   carrdm_base             * dstref;
+   void                    * mem;
+   const carrdm_definition * def;
+   int                       err;
+
+   assert(carrdm_is_valid_object(objref) == CARRDM_TRUE);
+
+   // initializes bare object
+   if ((mem = carrdm_alloc(NULL, srcref->def)) == NULL)
+      return(NULL);
+   if ((dstref = (carrdm_base *)carrdm_base_initialize(mem)) == NULL)
+   {
+      if (dstref == NULL)
+         carrdm_release(mem);
+      return(NULL);
+   };
+
+   // copies parameters
+   def = dstref->def;
+   while (def != NULL)
+   {
+      if ((def->copy))
+      {
+         if ((err = def->copy(dstref, srcref, deep)) != CARRDM_SUCCESS)
+         {
+            carrdm_release(dstref);
+            return(NULL);
+         };
+      };
+      def = def->super_def;
+   };
+
+   return(dstref);
 }
 
 
