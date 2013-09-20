@@ -142,9 +142,12 @@ int carrdm_get_value(void * ptr, uint64_t valid, void * outval)
 
    def = objref->def;
    while (def != NULL)
+   {
       if ((def->getter))
          if ((err = def->getter(ptr, valid, outval)) != CARRDM_UNKNOWN_PARAM)
             return(err);
+      def = def->super_def;
+   };
 
    return(CARRDM_UNKNOWN_PARAM);
 }
@@ -163,9 +166,12 @@ int carrdm_set_value(void * ptr, uint64_t valid, const void * inval)
 
    def = objref->def;
    while (def != NULL)
+   {
       if ((def->setter))
          if ((err = def->setter(ptr, valid, inval)) != CARRDM_UNKNOWN_PARAM)
             return(err);
+      def = def->super_def;
+   };
 
    return(CARRDM_UNKNOWN_PARAM);
 }
