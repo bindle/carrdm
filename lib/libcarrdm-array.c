@@ -200,7 +200,7 @@ void carrdm_array_destroy(void * ptr)
 }
 
 
-carrdm_base * carrdm_array_object(carrdm_array * array, size_t idx)
+carrdm_base * carrdm_array_object(const carrdm_array * array, size_t idx)
 {
    assert(carrdm_is_def(array, &carrdm_array_def) == CARRDM_TRUE);
    if (idx >= array->len)
@@ -225,7 +225,7 @@ int carrdm_array_remove(carrdm_array * array, size_t idx)
 }
 
 
-ssize_t carrdm_array_index(carrdm_array * array, void * ptr)
+ssize_t carrdm_array_index(const carrdm_array * array, void * ptr)
 {
    size_t pos;
    assert(carrdm_is_def(array, &carrdm_array_def) == CARRDM_TRUE);
