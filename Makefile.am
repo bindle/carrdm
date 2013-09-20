@@ -63,7 +63,8 @@ info_TEXINFOS				=
 noinst_DATA				=
 noinst_LTLIBRARIES			=
 noinst_HEADERS				=
-noinst_PROGRAMS				= tests/test-array01
+noinst_PROGRAMS				= tests/test-array01 \
+					  tests/test-include-carrdm-h
 noinst_SCRIPTS				=
 bin_PROGRAMS				=
 bin_SCRIPTS				=
@@ -72,7 +73,8 @@ sbin_SCRIPTS				=
 
 # lists
 BUILT_SOURCES				=
-TESTS					= tests/test-array01
+TESTS					= tests/test-array01 \
+					  tests/test-include-carrdm-h
 XFAIL_TESTS				=
 EXTRA_MANS				=
 EXTRA_DIST				= lib/libcarrdm.sym
