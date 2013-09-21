@@ -31,9 +31,6 @@
  *
  *  @BINDLE_BINARIES_BSD_LICENSE_END@
  */
-/**
- *  @file
- */
 #ifndef _CARRDM_INLINE_H
 #define _CARRDM_INLINE_H 1
 #undef CARRDM_PMARK
