@@ -1,4 +1,3 @@
-{#mainpage}
 
 C Allocate, Retain, Release, and Destroy Management Functions
 =============================================================
@@ -35,19 +34,19 @@ Disclaimer
 Software Requirements
 =====================
 
-   GNU GCC 4.2.1
-   GNU Libtool 2.4
-   GNU Autoconf 2.65
-   GNU Automake 1.11.1
-   Git 1.7.2.3
-   Bash Shell
+   * GNU GCC 4.2.1
+   * GNU Libtool 2.4
+   * GNU Autoconf 2.65
+   * GNU Automake 1.11.1
+   * Git 1.7.2.3
+   * Bash Shell
 
 
 Maintainers
 ===========
 
-   David M. Syzdek
-   Bindle Binaries
+   David M. Syzdek,
+   Bindle Binaries,
    syzdek@bindlebinaries.com
 
 
@@ -59,25 +58,31 @@ Source Code
    source code from the git repository.
 
    Browse Source:
-      https://github.com/bindle/carrdm
+
+      * https://github.com/bindle/carrdm
 
    Git URLs:
-      git://github.com/bindle/carrdm.git
+
+      * git://github.com/bindle/carrdm.git
 
    Downloading Source:
 
-      $ git clone git://github.com/bindle/carrdm.git
+       $ git clone git://github.com/bindle/carrdm.git
 
    Preparing Source:
 
-      $ cd carrdm
-      $ ./build-aux/autogen.sh
+       $ cd carrdm
+       $ ./build-aux/autogen.sh
 
-   Git Branches:
-      master - Current release of packages.
-      next   - changes staged for next release
-      pu     - proposed updates for next release
-      xx/yy+ - branch for testing new changes before merging to 'pu' branch
+   Git Branches
+   ------------
+
+      Name    | Description
+      --------|--------------------------------
+      master  | Current release of packages.
+      next    | changes staged for next release
+      pu      | proposed updates for next release
+      xx/yy+  | branch for testing new changes before merging to 'pu' branch
 
 
 Package Maintence Notes
@@ -93,13 +98,16 @@ Package Maintence Notes
       - Update date and version in ChangeLog.
       - Commit configure.ac and ChangeLog changes to repository.
       - Create tag in git repository:
-           $ git tag -s v${MAJOR}.${MINOR}
+
+            $ git tag -s v${MAJOR}.${MINOR}
+
       - Push repository to publishing server:
-           $ git push --tags origin master:master next:next pu:pu
+
+            $ git push --tags origin master:master next:next pu:pu
 
    Creating Source Distribution Archives:
 
-      $ ./configure
-      $ make update
-      $ make distcheck
-      $ make dist-bzip2
+       $ ./configure
+       $ make update
+       $ make distcheck
+       $ make dist-bzip2
