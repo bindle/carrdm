@@ -77,7 +77,8 @@ TESTS					= tests/test-array01 \
 					  tests/test-include-carrdm-h
 XFAIL_TESTS				=
 EXTRA_MANS				=
-EXTRA_DIST				= lib/libcarrdm.sym
+EXTRA_DIST				= doc/Doxyfile.in \
+					  lib/libcarrdm.sym
 CLEANFILES				= \
 					  $(builddir)/a.out   $(srcdir)/a.out \
 					  $(builddir)/*/a.out $(srcdir)/*/a.out \
@@ -134,15 +135,15 @@ include $(srcdir)/@bindletools_srcdir@/build-aux/makefile-version.am
 
 
 # custom targets
-.PHONY: doxygen
+.PHONY: dox doxygen
 
-doxygen: doc/Doxyfile.make
-	cd $(top_srcdir) && doxygen $(abs_top_builddir)/doc/Doxyfile.run
+dox: doxygen
 
-doc/Doxyfile.make: Makefile doc/Doxyfile
-	mkdir -p doc
-	@echo "do_subst < doc/Doxyfile > ${@}";
-	@${do_subst} < $(top_srcdir)/doc/Doxyfile > ${@} || exit 1;
+doxygen: doc/Doxyfile
+	cd $(top_srcdir) && doxygen $(abs_top_builddir)/doc/Doxyfile
+
+doc/Doxyfile: Makefile doc/Doxyfile.in
+	@$(do_subst_dt)
 
 
 # local targets
@@ -153,9 +154,9 @@ install-data-local:
 uninstall-local:
 
 clean-local:
+	rm -fR $(top_srcdir)/doc/doxygen
 
 distclean-local:
-	rm -fR $(top_srcdir)/doc/doxygen
 	rm -fR $(srcdir)/autom4te.cache
 
 
