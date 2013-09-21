@@ -1,3 +1,4 @@
+{#mainpage}
 
 C Allocate, Retain, Release, and Destroy Management Functions
 =============================================================

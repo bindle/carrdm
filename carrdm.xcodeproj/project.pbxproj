@@ -104,7 +104,7 @@
 		A0C06C5B17D80D95000DCB6A /* configure.ac */ = {isa = PBXFileReference; explicitFileType = text.script; path = configure.ac; sourceTree = "<group>"; };
 		A0C06C5C17D80D95000DCB6A /* COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		A0C06C5D17D80D95000DCB6A /* Makefile.am */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; indentWidth = 8; path = Makefile.am; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
-		A0C06C5E17D80D95000DCB6A /* README */ = {isa = PBXFileReference; explicitFileType = text.script; path = README; sourceTree = "<group>"; };
+		A0C06C5E17D80D95000DCB6A /* README.md */ = {isa = PBXFileReference; explicitFileType = text.script; path = README.md; sourceTree = "<group>"; };
 		A0C06C6017D80E81000DCB6A /* bindletools.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = bindletools.xcodeproj; path = bindletools/bindletools.xcodeproj; sourceTree = "<group>"; };
 		A0C06C6D17D93142000DCB6A /* carrdm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = carrdm.h; sourceTree = "<group>"; };
 		A0C06C7817D933D8000DCB6A /* libcarrdm.sym */ = {isa = PBXFileReference; explicitFileType = text.script; path = libcarrdm.sym; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 				A0C06C5B17D80D95000DCB6A /* configure.ac */,
 				A0C06C5C17D80D95000DCB6A /* COPYING */,
 				A0C06C5D17D80D95000DCB6A /* Makefile.am */,
-				A0C06C5E17D80D95000DCB6A /* README */,
+				A0C06C5E17D80D95000DCB6A /* README.md */,
 				A0C06C5817D80D95000DCB6A /* build-aux */,
 				A0C06C5F17D80E5C000DCB6A /* contrib */,
 				A0C06C6C17D93142000DCB6A /* include */,
