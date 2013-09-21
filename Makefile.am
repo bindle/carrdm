@@ -86,6 +86,8 @@ CLEANFILES				= \
 					  $(bin_SCRIPTS) \
 					  $(sbin_SCRIPTS) \
 					  $(noinst_SCRIPTS) \
+					  doc/Doxyfile.make \
+					  doc/doxygen \
 					  @PACKAGE_TARNAME@-*.tar.* \
 					  @PACKAGE_TARNAME@-*.zip
 DISTCHECK_CONFIGURE_FLAGS		= --enable-strictwarnings
@@ -132,7 +134,15 @@ include $(srcdir)/@bindletools_srcdir@/build-aux/makefile-version.am
 
 
 # custom targets
-.PHONY:
+.PHONY: doxygen
+
+doxygen: doc/Doxyfile.make
+	cd $(top_srcdir) && doxygen $(abs_top_builddir)/doc/Doxyfile.run
+
+doc/Doxyfile.make: Makefile doc/Doxyfile
+	mkdir -p doc
+	@echo "do_subst < doc/Doxyfile > ${@}";
+	@${do_subst} < $(top_srcdir)/doc/Doxyfile > ${@} || exit 1;
 
 
 # local targets
@@ -145,6 +155,7 @@ uninstall-local:
 clean-local:
 
 distclean-local:
+	rm -fR $(top_srcdir)/doc/doxygen
 	rm -fR $(srcdir)/autom4te.cache
 
 
