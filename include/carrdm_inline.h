@@ -194,6 +194,8 @@ _CARRDM_I int carrdm_is_object(const void * ptr)
             return(CARRDM_FALSE);
       obj_def = obj_def->super_def;
    };
+   if (count >= 100)
+      return(CARRDM_FALSE);
 
    if (obj_def->super_def != NULL)
       return(CARRDM_FALSE);
