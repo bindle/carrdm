@@ -50,6 +50,8 @@
 #include <stdlib.h>
 #include <assert.h>
 
+#include <carrdm.h>
+
 
 ////////////////////////
 //                    //
