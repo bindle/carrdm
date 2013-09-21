@@ -106,6 +106,7 @@ carrdm_definition carrdm_array_def =
    CARRDM_API_REVISION,       // obj_api_revision
    CARRDM_API_AGE,            // obj_api_age
    NULL,                      // obj_data
+   0LLU,                      // obj_data_size
    &carrdm_base_def,          // super_def;
    CARRDM_TYPE_ARRAY,         // type;
    sizeof(carrdm_array),      // size;

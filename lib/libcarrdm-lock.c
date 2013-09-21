@@ -148,6 +148,7 @@ carrdm_definition carrdm_baselock_def =
    CARRDM_API_REVISION,          // obj_api_revision
    CARRDM_API_AGE,               // obj_api_age
    NULL,                         // obj_data
+   0LLU,                         // obj_data_size
    &carrdm_base_def,             // super_def
    CARRDM_TYPE_BASELOCK,         // type
    sizeof(carrdm_baselock),      // size
@@ -169,6 +170,7 @@ carrdm_definition carrdm_reallock_def =
    CARRDM_API_REVISION,          // obj_api_revision
    CARRDM_API_AGE,               // obj_api_age
    NULL,                         // obj_data
+   0LLU,                         // obj_data_size
    &carrdm_base_def,             // super_def
    CARRDM_TYPE_BASELOCK,         // type
    sizeof(carrdm_reallock),      // size
@@ -190,6 +192,7 @@ carrdm_definition carrdm_reclock_def =
    CARRDM_API_REVISION,          // obj_api_revision
    CARRDM_API_AGE,               // obj_api_age
    NULL,                         // obj_data
+   0LLU,                         // obj_data_size
    &carrdm_baselock_def,         // super_def
    CARRDM_TYPE_RECLOCK,          // type
    sizeof(carrdm_reclock),       // size

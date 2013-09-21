@@ -183,6 +183,7 @@ struct carrdm_definition_struct
    uint64_t                  obj_api_revision; ///< Implmentation revision of current Object API.
    uint64_t                  obj_api_age;      ///< Number of supported previous object API versions.
    void                    * obj_data;         ///< Pointer to additional object information (object specific).
+   size_t                    obj_data_size;    ///< Pointer to additional object information (object specific).
    const carrdm_definition * super_def;        ///< Reference to object's super class definition.
    uint64_t                  type;             ///< Numeric ID of object.
    size_t                    size;             ///< Size of object's state struct.
