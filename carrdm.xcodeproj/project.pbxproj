@@ -98,6 +98,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A03C192417F088B9005D38FD /* Doxyfile.in */ = {isa = PBXFileReference; explicitFileType = text.script; path = Doxyfile.in; sourceTree = "<group>"; };
+		A03C195D17F088B9005D38FD /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = index.html; path = html/index.html; sourceTree = "<group>"; };
 		A0C06C5717D80D95000DCB6A /* acinclude.m4 */ = {isa = PBXFileReference; explicitFileType = text.script; path = acinclude.m4; sourceTree = "<group>"; };
 		A0C06C5917D80D95000DCB6A /* git-tar-name.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "git-tar-name.txt"; sourceTree = "<group>"; };
 		A0C06C5A17D80D95000DCB6A /* ChangeLog */ = {isa = PBXFileReference; explicitFileType = text.script; path = ChangeLog; sourceTree = "<group>"; };
@@ -163,6 +165,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A03C192217F088B9005D38FD /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				A03C192417F088B9005D38FD /* Doxyfile.in */,
+				A03C192517F088B9005D38FD /* doxygen */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+		A03C192517F088B9005D38FD /* doxygen */ = {
+			isa = PBXGroup;
+			children = (
+				A03C195D17F088B9005D38FD /* index.html */,
+			);
+			path = doxygen;
+			sourceTree = "<group>";
+		};
 		A0C06C5017D80B04000DCB6A = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +193,7 @@
 				A0C06C5E17D80D95000DCB6A /* README.md */,
 				A0C06C5817D80D95000DCB6A /* build-aux */,
 				A0C06C5F17D80E5C000DCB6A /* contrib */,
+				A03C192217F088B9005D38FD /* doc */,
 				A0C06C6C17D93142000DCB6A /* include */,
 				A0C06C7117D93365000DCB6A /* lib */,
 				A0C06D2917DB78D3000DCB6A /* tests */,
