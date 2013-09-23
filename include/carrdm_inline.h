@@ -261,6 +261,8 @@ _CARRDM_I void carrdm_release(void * ptr)
 {
    carrdm_base * objref = (carrdm_base *) ptr;
    uint64_t count;
+   if (ptr == NULL)
+      return;
    assert(carrdm_is_valid_object(ptr) == CARRDM_TRUE);
    if ((count = __sync_fetch_and_sub(&objref->retain_count, 1)) <= 1)
    {
