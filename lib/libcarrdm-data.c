@@ -131,7 +131,8 @@ int carrdm_data_copy(void * dst, const void * src, int __unused deep)
    if ((dstref->data = malloc(srcref->size)) == NULL)
       return(CARRDM_NO_MEMORY);
    memcpy(dstref->data, srcref->data, srcref->size);
-   dstref->size = srcref->size;
+   dstref->capacity  = srcref->size;
+   dstref->size      = dstref->capacity;
 
    return(CARRDM_SUCCESS);
 }
@@ -145,8 +146,9 @@ void carrdm_data_destroy(void * ptr)
 
    if (objref->data != NULL)
       free(objref->data);
-   objref->data = NULL;
-   objref->size = 0;
+   objref->data      = NULL;
+   objref->capacity  = 0;
+   objref->size      = 0;
 
    return;
 }
@@ -209,7 +211,8 @@ carrdm_data * carrdm_data_initialize_with_memory(void * ptr, const void * src, s
          carrdm_release(data);
          return(NULL);
       };
-      data->size = size;
+      data->capacity = size;
+      data->size     = data->capacity;
       if (src != NULL)
          memcpy(data->data, src, size);
       else
@@ -232,13 +235,17 @@ int carrdm_data_resize(carrdm_data * objref, size_t size)
 
    assert(carrdm_is_def(objref, &carrdm_data_def) == CARRDM_TRUE);
 
-   if (size < objref->size)
+   if (size < objref->capacity)
+   {
+      objref->size = size;
       return(CARRDM_SUCCESS);
+   };
 
    if ((ptr = realloc(objref->data, size)) == NULL)
       return(CARRDM_NO_MEMORY);
-   objref->data = ptr;
-   objref->size = size;
+   objref->data      = ptr;
+   objref->capacity  = size;
+   objref->size      = objref->capacity;
 
    return(CARRDM_SUCCESS);
 }

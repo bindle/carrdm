@@ -219,6 +219,7 @@ struct carrdm_data_struct
    {
       carrdm_base  base;
    } supers;
+   size_t   capacity;
    size_t   size;
    void   * data;
 };
