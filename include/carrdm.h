@@ -174,11 +174,11 @@ typedef struct carrdm_reclock_struct         carrdm_reclock;
 
 union carrdm_magic_union
 {
-  uint64_t number;
-  uint8_t  number8;
-  uint32_t number32;
-  uint64_t number64;
-  uint8_t  bytes[8];
+   const uint64_t number;
+   const uint8_t  number8;
+   const uint32_t number32;
+   const uint64_t number64;
+   const uint8_t  bytes[8];
 };
 
 
@@ -186,23 +186,23 @@ union carrdm_magic_union
 /// limited subclassing.
 struct carrdm_definition_struct
 {
-   size_t                    def_size;         ///< Size of the definition struct
-   uint64_t                  def_api_current;  ///< Current CARRDM API version (See GNU Libtool versions).
-   uint64_t                  def_api_revision; ///< Implementation revision of current CARRDM API
-   uint64_t                  def_api_age;      ///< Number of supported previous CARRDM API versions.
-   uint64_t                  obj_api_current;  ///< Current API version of object.
-   uint64_t                  obj_api_revision; ///< Implmentation revision of current Object API.
-   uint64_t                  obj_api_age;      ///< Number of supported previous object API versions.
-   void                    * obj_data;         ///< Pointer to additional object information (object specific).
-   size_t                    obj_data_size;    ///< Pointer to additional object information (object specific).
-   const carrdm_definition * super_def;        ///< Reference to object's super class definition.
-   uint64_t                  type;             ///< Numeric ID of object.
-   size_t                    size;             ///< Size of object's state struct.
-   void   (* destroy)(void * objref);          ///< Function for deallocating members in object's state struct.
-   int    (* getter)(const void * objref, uint64_t valid, void * outval); ///< Function retrieving values of members within object's state struct.
-   int    (* setter)(void * objref, uint64_t valid, const void * inval); ///< Function setting values of members within object's state struct.
-   int    (* is_object)(const void * objref, const carrdm_definition * def);
-   int    (* copy)(void * dst, const void * src, int deep); ///< Function duplicating values of members within one object's state struct into another object's state struct.
+   const size_t                    def_size;         ///< Size of the definition struct
+   const uint64_t                  def_api_current;  ///< Current CARRDM API version (See GNU Libtool versions).
+   const uint64_t                  def_api_revision; ///< Implementation revision of current CARRDM API
+   const uint64_t                  def_api_age;      ///< Number of supported previous CARRDM API versions.
+   const uint64_t                  obj_api_current;  ///< Current API version of object.
+   const uint64_t                  obj_api_revision; ///< Implmentation revision of current Object API.
+   const uint64_t                  obj_api_age;      ///< Number of supported previous object API versions.
+   const void              * const obj_data;         ///< Pointer to additional object information (object specific).
+   const size_t                    obj_data_size;    ///< Pointer to additional object information (object specific).
+   const carrdm_definition * const super_def;        ///< Reference to object's super class definition.
+   const uint64_t                  type;             ///< Numeric ID of object.
+   const size_t                    size;             ///< Size of object's state struct.
+   void   (* const destroy)(void * objref);          ///< Function for deallocating members in object's state struct.
+   int    (* const getter)(const void * objref, uint64_t valid, void * outval); ///< Function retrieving values of members within object's state struct.
+   int    (* const setter)(void * objref, uint64_t valid, const void * inval); ///< Function setting values of members within object's state struct.
+   int    (* const is_object)(const void * objref, const carrdm_definition * def);
+   int    (* const copy)(void * dst, const void * src, int deep); ///< Function duplicating values of members within one object's state struct into another object's state struct.
 };
 
 

@@ -104,7 +104,7 @@ void * carrdm_alloc(void * mem, const carrdm_definition * def)
       if ((objref = malloc(def->size)) == NULL)
          return(NULL);
       memset(objref, 0, def->size);
-      objref->magic.number = CARRDM_MAGIC;
+      memcpy(objref, &carrdm_magic_value, sizeof(carrdm_magic));
       objref->def          = def;
    };
    
