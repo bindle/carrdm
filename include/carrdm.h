@@ -199,7 +199,7 @@ struct carrdm_base_struct
 {
    uint64_t                  magic;
    const carrdm_definition * def;
-   uint64_t                  retain_count;
+   volatile int32_t          retain_count;
 };
 
 

@@ -52,6 +52,14 @@
 
 #include <carrdm.h>
 
+#ifdef __APPLE__
+   #include "TargetConditionals.h"
+#endif
+
+#ifdef TARGET_OS_MAC
+#include <libkern/OSAtomic.h>
+#endif
+
 
 ////////////////////////
 //                    //
@@ -260,15 +268,23 @@ _CARRDM_I const carrdm_reclock  * carrdm_reclock_ccast(const void * objref)
 _CARRDM_I void carrdm_release(void * ptr)
 {
    carrdm_base * objref = (carrdm_base *) ptr;
-   uint64_t count;
+   int32_t count;
    if (ptr == NULL)
       return;
    assert(carrdm_is_valid_object(ptr) == CARRDM_TRUE);
+#if TARGET_OS_MAC
+   if ((count = OSAtomicDecrement32Barrier(&objref->retain_count)) <= 0)
+   {
+      carrdm_destroy(objref);
+      return;
+   };
+#else
    if ((count = __sync_fetch_and_sub(&objref->retain_count, 1)) <= 1)
    {
       carrdm_destroy(objref);
       return;
    };
+#endif
    return;
 }
 
@@ -277,7 +293,11 @@ _CARRDM_I void carrdm_retain(void * ptr)
 {
    carrdm_base * objref = (carrdm_base *) ptr;
    assert(carrdm_is_valid_object(ptr) == CARRDM_TRUE);
+#if TARGET_OS_MAC
+   OSAtomicIncrement32Barrier(&objref->retain_count);
+#else
    __sync_fetch_and_add(&objref->retain_count, 1);
+#endif
    return;
 }
 
@@ -286,7 +306,11 @@ _CARRDM_I uint64_t carrdm_retain_count(const void * ptr)
 {
    const carrdm_base * objref = (carrdm_base *) ptr;
    assert(carrdm_is_valid_object(ptr) == CARRDM_TRUE);
+#if TARGET_OS_MAC
+   return((uint64_t)&objref->retain_count);
+#else
    return(__sync_fetch_and_add(&objref->retain_count, 0));
+#endif
 }
 
 
