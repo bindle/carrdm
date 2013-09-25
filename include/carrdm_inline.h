@@ -179,8 +179,9 @@ _CARRDM_I int carrdm_is_object(const void * ptr)
 
    if (objref == NULL)
       return(CARRDM_FALSE);
-   if (objref->magic != CARRDM_MAGIC)
-      return(CARRDM_FALSE);
+   for(count = 0; count < 8; count++)
+      if (objref->magic.bytes[count] != carrdm_magic_value.bytes[count])
+         return(CARRDM_FALSE);
    if (objref->def == NULL)
       return(CARRDM_FALSE);
    if (objref->def->def_size < sizeof(carrdm_definition))

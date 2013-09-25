@@ -73,6 +73,18 @@ extern inline uint64_t       carrdm_retain_count(const void * objref);
 
 /////////////////
 //             //
+//  Variables  //
+//             //
+/////////////////
+#ifdef CARRDM_PMARK
+#pragma mark - Variables
+#endif
+
+carrdm_magic const carrdm_magic_value = { .number = CARRDM_MAGIC };
+
+
+/////////////////
+//             //
 //  Functions  //
 //             //
 /////////////////
@@ -92,12 +104,12 @@ void * carrdm_alloc(void * mem, const carrdm_definition * def)
       if ((objref = malloc(def->size)) == NULL)
          return(NULL);
       memset(objref, 0, def->size);
-      objref->magic = CARRDM_MAGIC;
-      objref->def   = def;
+      objref->magic.number = CARRDM_MAGIC;
+      objref->def          = def;
    };
    
-   assert(objref->magic     == CARRDM_MAGIC);
-   assert(objref->def->size >= def->size);
+   assert(objref->magic.number == CARRDM_MAGIC);
+   assert(objref->def->size    >= def->size);
 
    return(objref);
 }

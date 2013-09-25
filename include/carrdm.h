@@ -162,6 +162,7 @@
 #pragma mark - Data Types
 #endif
 
+typedef union  carrdm_magic_union            carrdm_magic;
 typedef struct carrdm_base_struct            carrdm;
 typedef struct carrdm_array_struct           carrdm_array;
 typedef struct carrdm_base_struct            carrdm_base;
@@ -169,6 +170,16 @@ typedef struct carrdm_baselock_struct        carrdm_baselock;
 typedef struct carrdm_data_struct            carrdm_data;
 typedef struct carrdm_definition_struct      carrdm_definition;
 typedef struct carrdm_reclock_struct         carrdm_reclock;
+
+
+union carrdm_magic_union
+{
+  uint64_t number;
+  uint8_t  number8;
+  uint32_t number32;
+  uint64_t number64;
+  uint8_t  bytes[8];
+};
 
 
 /// @brief Provides object information used to validate object and to perform
@@ -197,7 +208,7 @@ struct carrdm_definition_struct
 
 struct carrdm_base_struct
 {
-   uint64_t                  magic;
+   carrdm_magic              magic;
    const carrdm_definition * def;
    volatile int32_t          retain_count;
 };
@@ -243,6 +254,8 @@ struct carrdm_reclock_struct
 #ifdef CARRDM_PMARK
 #pragma mark - Variables
 #endif
+
+_CARRDM_V carrdm_magic const carrdm_magic_value;
 
 _CARRDM_V carrdm_definition carrdm_array_def;
 _CARRDM_V carrdm_definition carrdm_base_def;
