@@ -274,7 +274,7 @@ _CARRDM_I void carrdm_release(void * ptr)
       return;
    assert(carrdm_is_valid_object(ptr) == CARRDM_TRUE);
 #if TARGET_OS_MAC
-   if ((count = OSAtomicDecrement32Barrier(&objref->retain_count)) <= 0)
+   if ((count = OSAtomicAdd32Barrier(-1, &objref->retain_count)) <= 0)
    {
       carrdm_destroy(objref);
       return;
@@ -295,7 +295,7 @@ _CARRDM_I void carrdm_retain(void * ptr)
    carrdm_base * objref = (carrdm_base *) ptr;
    assert(carrdm_is_valid_object(ptr) == CARRDM_TRUE);
 #if TARGET_OS_MAC
-   OSAtomicIncrement32Barrier(&objref->retain_count);
+   OSAtomicAdd32Barrier(1, &objref->retain_count);
 #else
    __sync_fetch_and_add(&objref->retain_count, 1);
 #endif
