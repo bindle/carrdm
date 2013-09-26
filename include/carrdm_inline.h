@@ -303,12 +303,12 @@ _CARRDM_I void carrdm_retain(void * ptr)
 }
 
 
-_CARRDM_I uint64_t carrdm_retain_count(const void * ptr)
+_CARRDM_I int32_t carrdm_retain_count(void * ptr)
 {
-   const carrdm_base * objref = (carrdm_base *) ptr;
+   carrdm_base * objref = (carrdm_base *) ptr;
    assert(carrdm_is_valid_object(ptr) == CARRDM_TRUE);
 #if TARGET_OS_MAC
-   return((uint64_t)&objref->retain_count);
+   return(OSAtomicAdd32Barrier(0, &objref->retain_count));
 #else
    return(__sync_fetch_and_add(&objref->retain_count, 0));
 #endif

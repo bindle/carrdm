@@ -68,7 +68,7 @@ extern inline int            carrdm_is_type(const void * objref, uint64_t type);
 extern inline int            carrdm_is_valid_object(const void * objref);
 extern inline void           carrdm_release(void * objref);
 extern inline void           carrdm_retain(void * objref);
-extern inline uint64_t       carrdm_retain_count(const void * objref);
+extern inline int32_t        carrdm_retain_count(void * objref);
 
 
 /////////////////

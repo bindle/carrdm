@@ -332,7 +332,7 @@ _CARRDM_I int                  carrdm_is_type(const void * objref, uint64_t type
 _CARRDM_I int                  carrdm_is_valid_object(const void * objref);
 _CARRDM_I void                 carrdm_release(void * objref);
 _CARRDM_I void                 carrdm_retain(void * objref);
-_CARRDM_I uint64_t             carrdm_retain_count(const void * objref);
+_CARRDM_I int32_t              carrdm_retain_count(void * objref);
 _CARRDM_F int                  carrdm_set_value(void * objref, uint64_t valid, const void * inval);
 /** @} */
 
