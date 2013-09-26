@@ -66,7 +66,8 @@ struct carrdm_array_struct
 {
    union
    {
-      carrdm_base  base;
+      carrdm_magic   magic;
+      carrdm_base    base;
    } supers;
    carrdm_base ** list;
    size_t         len;

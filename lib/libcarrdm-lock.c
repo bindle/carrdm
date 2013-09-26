@@ -76,7 +76,8 @@ struct carrdm_lock_data_struct
 {
    union
    {
-      carrdm_base     base;
+      carrdm_magic   magic;
+      carrdm_base    base;
    } supers;
    uint64_t             lock_count;
    pthread_t            lock_thread;
@@ -92,7 +93,8 @@ struct carrdm_reallock_struct
 {
    union
    {
-      carrdm_base     base;
+      carrdm_magic   magic;
+      carrdm_base    base;
    } supers;
    uint64_t             lock_recursive;
    uint64_t             lock_count;
