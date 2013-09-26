@@ -220,7 +220,7 @@ struct carrdm_baselock_struct
    {
       carrdm_magic   magic;
       carrdm_base    base;
-   } supers;
+   } sup;
    void * reallock;
 };
 
@@ -231,7 +231,7 @@ struct carrdm_data_struct
    {
       carrdm_magic   magic;
       carrdm_base    base;
-   } supers;
+   } sup;
    size_t   capacity;
    size_t   size;
    void   * data;
@@ -245,7 +245,7 @@ struct carrdm_reclock_struct
       carrdm_magic      magic;
       carrdm_base       base;
       carrdm_baselock   baselock;
-   } supers;
+   } sup;
 };
 
 

@@ -78,7 +78,7 @@ struct carrdm_lock_data_struct
    {
       carrdm_magic   magic;
       carrdm_base    base;
-   } supers;
+   } sup;
    uint64_t             lock_count;
    pthread_t            lock_thread;
    carrdm_spinlock_t    lock_meta_lock;
@@ -95,7 +95,7 @@ struct carrdm_reallock_struct
    {
       carrdm_magic   magic;
       carrdm_base    base;
-   } supers;
+   } sup;
    uint64_t             lock_recursive;
    uint64_t             lock_count;
    pthread_t            lock_thread;
@@ -443,7 +443,7 @@ carrdm_reclock * carrdm_reclock_initialize(void * ptr)
       return(NULL);
    };
 
-   reallock                 = objref->supers.baselock.reallock;
+   reallock                 = objref->sup.baselock.reallock;
    reallock->lock_recursive = CARRDM_TRUE;
 
    return(objref);

@@ -68,7 +68,7 @@ struct carrdm_array_struct
    {
       carrdm_magic   magic;
       carrdm_base    base;
-   } supers;
+   } sup;
    carrdm_base ** list;
    size_t         len;
    size_t         capacity;
