@@ -41,21 +41,8 @@
 #include <carrdm.h>
 #include <assert.h>
 
-#define carrdm_log(...) carrdm_test_log(__FILE__, __LINE__, __VA_ARGS__)
-int carrdm_test_log(const char * file, int line, const char * fmt, ...);
 
 int main(void);
-
-
-int carrdm_test_log(const char * file, int line, const char * fmt, ...)
-{
-   va_list args;
-   fprintf(stderr, "%s: %i: ", file, line);
-   va_start (args, fmt);
-   vfprintf(stderr, fmt, args);
-   va_end (args);
-   return(1);
-}
 
 
 int main(void)
