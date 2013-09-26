@@ -39,6 +39,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <carrdm.h>
+#include <assert.h>
 
 #define carrdm_log(...) carrdm_test_log(__FILE__, __LINE__, __VA_ARGS__)
 int carrdm_test_log(const char * file, int line, const char * fmt, ...);
@@ -61,33 +62,24 @@ int main(void)
 {
    carrdm_array * list;
    carrdm_base  * objref;
-   size_t         count;
 
-   if ((list = carrdm_array_initialize(NULL)) == NULL)
-      return(carrdm_log("out of virtual memory\n"));
-   if ((count = carrdm_retain_count(list)) != 1)
-      return(carrdm_log("retain count should be 1 but is %zu\n", count));
+   assert((list = carrdm_array_initialize(NULL)) != NULL);
+   assert(carrdm_retain_count(list) == 1);
 
-   if ((objref = carrdm_base_initialize(NULL)) == NULL)
-      return(carrdm_log("out of virtual memory\n"));
-   if ((count = carrdm_retain_count(objref)) != 1)
-      return(carrdm_log("retain count should be 1 but is %zu\n", count));
+   assert((objref = carrdm_base_initialize(NULL)) != NULL);
+   assert(carrdm_retain_count(objref) == 1);
 
    carrdm_array_append(list, objref);
-   if ((count = carrdm_retain_count(objref)) != 2)
-      return(carrdm_log("retain count should be 2 but is %zu\n", count));
+   assert(carrdm_retain_count(objref) == 2);
 
    carrdm_release(objref);
-   if ((count = carrdm_retain_count(objref)) != 1)
-      return(carrdm_log("retain count should be 1 but is %zu\n", count));
+   assert(carrdm_retain_count(objref) == 1);
 
    carrdm_retain(objref);
-   if ((count = carrdm_retain_count(objref)) != 2)
-      return(carrdm_log("retain count should be 2 but is %zu\n", count));
+   assert(carrdm_retain_count(objref) == 2);
 
    carrdm_release(list);
-   if ((count = carrdm_retain_count(objref)) != 1)
-      return(carrdm_log("retain count should be 1 but is %zu\n", count));
+   assert(carrdm_retain_count(objref) == 1);
 
    carrdm_release(objref);
 
