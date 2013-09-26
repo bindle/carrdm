@@ -49,6 +49,10 @@
 #include <assert.h>
 #include <pthread.h>
 
+#ifdef USE_OSSPINLOCK
+#   include <libkern/OSAtomic.h>
+#endif
+
 #include "libcarrdm-base.h"
 
 
@@ -64,7 +68,6 @@
 #ifdef USE_PTHREAD_SPINLOCK
 typedef pthread_spinlock_t carrdm_spinlock_t;
 #elif USE_OSSPINLOCK
-#include <libkern/OSAtomic.h>
 typedef OSSpinLock carrdm_spinlock_t;
 #else
 typedef pthread_mutex_t carrdm_spinlock_t;

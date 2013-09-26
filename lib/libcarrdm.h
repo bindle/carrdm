@@ -50,6 +50,14 @@
 #   include "config.h"
 #endif
 
+#ifdef __APPLE__
+#   include "TargetConditionals.h"
+#   ifdef TARGET_OS_MAC
+#      undef USE_OSSPINLOCK
+#      define USE_OSSPINLOCK 1
+#   endif
+#endif
+
 #include <inttypes.h>
 #include <carrdm.h>
 
